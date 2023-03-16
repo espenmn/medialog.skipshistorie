@@ -1,0 +1,5 @@
+======================
+medialog.skipshistorie
+======================
+
+User documentation
