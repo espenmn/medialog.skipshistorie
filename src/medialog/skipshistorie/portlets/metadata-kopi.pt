@@ -1,0 +1,23 @@
+<aside class="portlet portletMetadata">
+  <header class="portletHeader"><span>Metadata</span></header>
+    <p>
+      <ul>
+        <li><b class="plonelink">Old id:</b> ${view/get_idold}</li>
+        <li><b>New id: </b>${view/get_idnew}</li>
+        <li><b>Vessel: </b>${view/get_vessel}</li>
+        <li><b>Skipstype: </b>${view/get_skipstype}</li>
+        <li><b>Grt: </b>${view/get_grt}</li>
+        <li><b>Tdw: </b>${view/get_tdw}</li>
+        <li><b>Purch: </b>${view/get_purch}</li>
+        <li><b>Del:</b>${view/get_del}</li>
+        <li><b>Shipyard: </b>${view/get_shipyard}</li>
+        <li><b>Ex: </b>${view/get_ex}</li>
+        <li><b>Y no: </b>${view/get_yno}</li>
+        <li><b>Owner I: </b>${view/get_owneri}</li>
+        <li><b>senere norsk: </b>${view/get_senerenorsk}</li>
+        <li><b>Sold: </b>${view/get_sold}</li>
+        <li><b>To: </b>${view/get_to}</li>
+      </ul>
+    </p>
+
+</aside>

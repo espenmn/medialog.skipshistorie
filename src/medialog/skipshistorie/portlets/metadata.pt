@@ -1,11 +1,25 @@
-<div class="weather">
-    <h3>Weather Report</h3>
-    <span tal:content="view/weather_report"></span>
-    <br>
-    Pressure: 
-    <span tal:content="view/get_pressure"></span>
-    <br>
-    Humidity: 
-    <span tal:content="view/get_humidity"></span>
-    <br>
-</div>
+<aside class="portlet portletMetadata">
+  <header class="portletHeader"><span>Metadata</span></header>
+    <p>
+      <ul>
+        <li><b class="plonelink">Old id:</b> ${context/idold|None}</li>
+        <li><b>New id: </b>${context/idnew|None}</li>
+        <li><b>Vessel: </b>${context/vessel|None}</li>
+        <li><b>Skipstype: </b>${context/skipstype|None}</li>
+        <li><b>Havn: </b>${context/havn|None}</li>
+        <li><b>Flagg: </b>${context/flagg|None}</li>
+        <li><b>Shipyard: </b>${context/shipyard|None}</li>
+        <li><b>Grt: </b>${context/grt|None}</li>
+        <li><b>Tdw: </b>${context/tdw|None}</li>
+        <li><b>Purch: </b>${context/purch|None}</li>
+        <li><b>Del:</b>${context/del_|None}</li>
+        <li><b>Ex: </b>${context/ex|None}</li>
+        <li><b>Y no: </b>${context/yno|None}</li>
+        <li><b>Owner I: </b>${context/owneri|None}</li>
+        <li><b>senere norsk: </b>${context/senerenorsk|None}</li>
+        <li><b>Sold: </b>${context/sold|None}</li>
+        <li><b>To: </b>${context/to|None}</li>
+      </ul>
+    </p>
+
+</aside>

@@ -14,5 +14,7 @@
     renderer=".metadata.Renderer"
     addview=".metadata.AddForm"
     editview=".metadata.EditForm" />
-    
+
+ 
+
 </configure>
