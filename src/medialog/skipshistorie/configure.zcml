@@ -13,6 +13,9 @@
   -->
   <!--<includeDependencies package="." />-->
 
+  <adapter factory=".indexers.idnewIndexer" name="idnew" />
+  <adapter factory=".indexers.off_nrIndexer" name="off_nr" />
+
   <include package=".browser" />
 
   <include file="permissions.zcml" />

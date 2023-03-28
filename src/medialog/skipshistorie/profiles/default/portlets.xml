@@ -7,7 +7,7 @@
   <portlet
     addview="medialog.skipshistorie.portlets.Metadata"
     title="MetaData"
-    description="A portlet which can render weather of the given place."
+    description="A portlet "
     i18n:attributes="title title_metadata;
                      description description_metadata">
 
@@ -22,6 +22,15 @@
     <!--<for interface="plone.app.portlets.interfaces.IDashboard" />-->
 
   </portlet>
-  
-  
+
+  <portlet
+    addview="plone.app.portlets.portlets.navigation.AddForm"
+    title="Innhold"
+    description="A special nav portlet"
+    i18n:attributes="title title_metadata;
+                     description description_metadata">
+
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+  </portlet>
+
 </portlets>

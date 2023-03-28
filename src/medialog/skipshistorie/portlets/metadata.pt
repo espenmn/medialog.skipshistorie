@@ -1,25 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone"
+      tal:omit-tag="">
+
+<!--tal:block condition="view/show"-->
+
 <aside class="portlet portletMetadata">
-  <header class="portletHeader"><span>Metadata</span></header>
+  <header class="portletHeader"><span>Teknisk info</span></header>
     <p>
       <ul>
         <li><b class="plonelink">Old id:</b> ${context/idold|None}</li>
-        <li><b>New id: </b>${context/idnew|None}</li>
-        <li><b>Vessel: </b>${context/vessel|None}</li>
-        <li><b>Skipstype: </b>${context/skipstype|None}</li>
-        <li><b>Havn: </b>${context/havn|None}</li>
-        <li><b>Flagg: </b>${context/flagg|None}</li>
-        <li><b>Shipyard: </b>${context/shipyard|None}</li>
-        <li><b>Grt: </b>${context/grt|None}</li>
-        <li><b>Tdw: </b>${context/tdw|None}</li>
-        <li><b>Purch: </b>${context/purch|None}</li>
-        <li><b>Del:</b>${context/del_|None}</li>
-        <li><b>Ex: </b>${context/ex|None}</li>
-        <li><b>Y no: </b>${context/yno|None}</li>
-        <li><b>Owner I: </b>${context/owneri|None}</li>
-        <li><b>senere norsk: </b>${context/senerenorsk|None}</li>
-        <li><b>Sold: </b>${context/sold|None}</li>
-        <li><b>To: </b>${context/to|None}</li>
+        <li tal:condition="context/idnew|None"><b>New id: </b>${context/idnew|None}</li>
+        <li><b>Vessel: </b>${python: context.vessel or context.Title}</li>
+        <li tal:condition="context/skipstype|None"><b>Skipstype: </b>${context/skipstype|None}</li>
+        <li tal:condition="context/havn|None"><b>Havn: </b>${context/havn|None}</li>
+        <li tal:condition="context/flagg|None"><b>Flagg: </b>${context/flagg|None}</li>
+        <li tal:condition="context/shipyard|None"><b>Shipyard: </b>${context/shipyard|None}</li>
+        <li tal:condition="context/grt|None"><b>Grt: </b>${context/grt|None}</li>
+        <li tal:condition="context/tdw|None"><b>Tdw: </b>${context/tdw|None}</li>
+        <li tal:condition="context/purch|None"><b>Purch: </b>${context/purch|None}</li>
+        <li tal:condition="context/del_|None"><b>Del:</b>${context/del_|None}</li>
+        <li tal:condition="context/ex|None"><b>Ex: </b>${context/ex|None}</li>
+        <li tal:condition="context/yno|None"><b>Y no: </b>${context/yno|None}</li>
+        <li tal:condition="context/owneri|None"><b>Owner I: </b>${context/owneri|None}</li>
+        <li tal:condition="context/senerenorsk|None"><b>Senere norsk: </b>${context/senerenorsk|None}</li>
+        <li tal:condition="context/sold|None"><b>Sold: </b>${context/sold|None}</li>
+        <li tal:condition="context/to|None"><b>To: </b>${context/to|None}</li>
+        <li tal:condition="context/byggeaar|None"><b>Byggeår: </b>${context/byggeaar|None}</li>
+        <li tal:condition="context/disponent|None"><b>Disponent: </b>${context/disponent|None}</li>
+        <li tal:condition="context/eier|None"><b>Eier: </b>${context/eier|None}</li>
+
+        <li tal:condition="context/rederinummer|None"><b>Rederinummer: </b>${context/rederinummer|None}</li>
+        <li tal:condition="context/off_nr|None"><b>Off.nr: </b>${context/off_nr|None}</li>
+        <li tal:condition="context/bnr|None"><b>bnr: </b>${context/bnr|None}</li>
+        <li tal:condition="context/byggeaar|None"><b>Byggeår: </b>${context/byggeaar|None}</li>
+        <li tal:condition="context/tonnasje|None"><b>Tonnasje: </b>${context/tonnasje|None}</li>
+        <li tal:condition="context/dimensjonerr|None"><b>Dimensjoner: </b>${context/dimensjonerr|None}</li>
+        <li tal:condition="context/lasthandtering|None"><p><b>Lasthåndtering: </b>${context/lasthandtering|None}</p></li>
+        <tal:check tal:condition="context/kjolemaskineri|None">
+        <li tal:define="kjol context/kjolemaskineri|None" tal:condition="python: len(kjol) >3 ">
+            <b>Kjølemaskineri: </b>${context/kjolemaskineri|None}
+         </li>
+       </tal:check>
+
       </ul>
     </p>
 
 </aside>
+
+
+<!--/tal:block-->
