@@ -5,16 +5,27 @@
 
   <include package="plone.app.portlets" />
 
+
   <!-- '-*- extra stuff goes here -*-' -->
 
   <plone:portlet
     name="medialog.skipshistorie.portlets.Metadata"
     interface=".metadata.IMetadataPortlet"
     assignment=".metadata.Assignment"
-    renderer=".metadata.Renderer"
+    renderer=".metadata.MRenderer"
     addview=".metadata.AddForm"
-    editview=".metadata.EditForm" />
+  />
 
- 
+
+  <plone:portlet
+    name="medialog.portlets.Navigation"
+    interface=".metadata.IMedialogNavigationPortlet"
+    assignment=".metadata.NAssignment"
+    renderer=".metadata.NRenderer"
+    addview="plone.app.portlets.portlets.navigation.AddForm"
+    editview="plone.app.portlets.portlets.navigation.EditForm"
+   />
+
+
 
 </configure>
