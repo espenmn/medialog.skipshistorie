@@ -10,10 +10,10 @@
   <header class="portletHeader"><span>Teknisk info</span></header>
     <p>
       <ul>
-        <li><b class="plonelink">Old id:</b> ${context/idold|None}</li>
+        <li tal:condition="context/idold|None"><b class="plonelink">Old id:</b> ${context/idold|None}</li>
         <li tal:condition="context/idnew|None"><b>New id: </b>${context/idnew|None}</li>
         <li><b>Vessel: </b>${python: context.vessel or context.Title}</li>
-        <li tal:condition="context/skipstype|None"><b>Skipstype: </b>${context/skipstype|None}</li>
+        <li tal:condition="context/skipstype|None"><b>Skipstype: </b><p class="pre">${context/skipstype|None}</p></li>
         <li tal:condition="context/havn|None"><b>Havn: </b>${context/havn|None}</li>
         <li tal:condition="context/flagg|None"><b>Flagg: </b>${context/flagg|None}</li>
         <li tal:condition="context/shipyard|None"><b>Shipyard: </b>${context/shipyard|None}</li>
@@ -37,17 +37,31 @@
         <li tal:condition="context/byggeaar|None"><b>Byggeår: </b>${context/byggeaar|None}</li>
         <li tal:condition="context/tonnasje|None"><b>Tonnasje: </b>${context/tonnasje|None}</li>
         <li tal:condition="context/dimensjonerr|None"><b>Dimensjoner: </b>${context/dimensjonerr|None}</li>
-        <li tal:condition="context/lasthandtering|None"><p><b>Lasthåndtering: </b>${context/lasthandtering|None}</p></li>
+        <li tal:condition="context/lasthandtering|None">
+          <b>Lasthåndtering: </b>
+          <span class="pre">${context/lasthandtering|None}</span></li>
         <tal:check tal:condition="context/kjolemaskineri|None">
         <li tal:define="kjol context/kjolemaskineri|None" tal:condition="python: len(kjol) >3 ">
             <b>Kjølemaskineri: </b>${context/kjolemaskineri|None}
-         </li>
+        </li>
+        <li tal:condition="context/kallesignal|None"><b>Kallesignal: </b>${context/kallesignal|None}</li>
        </tal:check>
 
       </ul>
     </p>
 
 </aside>
+<style>
+.pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ padding-bottom: 0;
+ margin-bottom: 0;
+}
 
+</style>
 
 <!--/tal:block-->
