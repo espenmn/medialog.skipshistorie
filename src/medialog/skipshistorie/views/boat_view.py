@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# from medialog.skipshistorie import _
+from medialog.skipshistorie import _
 from Products.Five.browser import BrowserView
 from zope.interface import implementer
 from zope.interface import Interface

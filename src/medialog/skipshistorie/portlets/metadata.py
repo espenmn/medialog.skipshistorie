@@ -24,7 +24,7 @@ from zope.interface import Interface
 
 
 class IMedialogNavigationPortlet(INavigationPortlet):
-    """A nav portlet"""
+    """A portlet"""
 
 class NRenderer(NavRenderer):
    @property
@@ -93,52 +93,3 @@ class MRenderer(base.Renderer):
             return True
         else:
             return False
-        #import pdb; pdb.set_trace()
-        #return self.context.vessel or False
-
-     #return not self.anonymous and self._data()
-    #
-    # def get_idold(self):
-    #     return self.context.idold
-    #
-    # def get_idnew(self):
-    #     return self.context.idnew
-    #
-    # def get_vessel(self):
-    #     return self.context.vessel
-    #
-    # def get_skipstype(self):
-    #     return self.context.skipstype
-    #
-    # def get_grt(self):
-    #     return self.context.grt
-    #
-    # def get_tdw(self):
-    #     return self.context.tdw
-    #
-    # def get_purch(self):
-    #     return self.context.purch
-    #
-    # def get_del(self):
-    #     return self.context.del_
-    #
-    # def get_shipyard(self):
-    #     return self.context.shipyard
-    #
-    # def get_ex(self):
-    #     return self.context.ex
-    #
-    # def get_yno(self):
-    #     return self.context.yno
-    #
-    # def get_owneri(self):
-    #     return self.context.owneri
-    #
-    # def get_senerenorsk(self):
-    #     return self.context.senerenorsk
-    #
-    # def get_sold(self):
-    #     return self.context.sold
-    #
-    # def get_to(self):
-    #     return self.context.to

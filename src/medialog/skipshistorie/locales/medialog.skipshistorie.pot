@@ -1,0 +1,256 @@
+#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+#SOME DESCRIPTIVE TITLE.
+#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-05-02 13:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: medialog.skipshistorie\n"
+
+#: ../views/boat_view.pt:52
+msgid "Bemanning"
+msgstr ""
+
+#: ../views/boat_view.pt:53
+msgid "Bnr (Sno)"
+msgstr ""
+
+#: ../views/boat_view.pt:55
+msgid "Bygge&#229;r"
+msgstr ""
+
+#: ../views/boat_view.pt:56
+msgid "Dekkmaskineri"
+msgstr ""
+
+#: ../views/boat_view.pt:58
+msgid "Dimensjoner"
+msgstr ""
+
+#: ../views/boat_view.pt:59
+msgid "Disponent"
+msgstr ""
+
+#: ../views/boat_view.pt:60
+msgid "Eier"
+msgstr ""
+
+#: ../views/boat_view.pt:62
+msgid "Fart"
+msgstr ""
+
+#: ../views/boat_view.pt:63
+msgid "Flagg"
+msgstr ""
+
+#: ../views/boat_view.pt:64
+msgid "Fremdrift"
+msgstr ""
+
+#: ../views/boat_view.pt:66
+msgid "Havn"
+msgstr ""
+
+#: ../views/boat_view.pt:108
+msgid "Historikk"
+msgstr ""
+
+#: ../views/boat_view.pt:113
+msgid "History"
+msgstr ""
+
+#: ../views/boat_view.pt:67
+msgid "Hjelpemaskineri"
+msgstr ""
+
+#: ../views/boat_view.pt:68
+msgid "ID new"
+msgstr ""
+
+#: ../configure.zcml:30
+msgid "Installs the medialog.skipshistorie add-on."
+msgstr ""
+
+#: ../views/boat_view.pt:69
+msgid "Kallesignal"
+msgstr ""
+
+#: ../views/boat_view.pt:71
+msgid "Kj&#248;lemaskineri"
+msgstr ""
+
+#: ../views/boat_view.pt:70
+msgid "Kjeler"
+msgstr ""
+
+#: ../views/boat_view.pt:73
+msgid "Klasse"
+msgstr ""
+
+#: ../views/boat_view.pt:74
+msgid "Kommunikasjon"
+msgstr ""
+
+#: ../views/boat_view.pt:75
+msgid "Konstruksjon"
+msgstr ""
+
+#: ../views/boat_view.pt:76
+msgid "Lastehandtering"
+msgstr ""
+
+#: ../views/boat_view.pt:77
+msgid "Manouvering"
+msgstr ""
+
+#: ../views/boat_view.pt:78
+msgid "Navigasjonsutstyr"
+msgstr ""
+
+#: ../views/boat_view.pt:49
+msgid "Old id:"
+msgstr ""
+
+#: ../views/boat_view.pt:81
+msgid "Owner I"
+msgstr ""
+
+#: ../views/boat_view.pt:82
+msgid "Power"
+msgstr ""
+
+#: ../views/boat_view.pt:83
+msgid "Purch"
+msgstr ""
+
+#: ../views/boat_view.pt:84
+msgid "Rederinummer"
+msgstr ""
+
+#: ../views/boat_view.pt:85
+msgid "Senere Norsk"
+msgstr ""
+
+#: ../views/boat_view.pt:86
+msgid "Shipyard"
+msgstr ""
+
+#: ../views/boat_view.pt:87
+msgid "Skipsnavn"
+msgstr ""
+
+#: ../views/boat_view.pt:89
+msgid "Skipstype"
+msgstr ""
+
+#: ../views/boat_view.pt:88
+msgid "Skipstype (bruk)"
+msgstr ""
+
+#: ../views/boat_view.pt:92
+msgid "Tidligere navn"
+msgstr ""
+
+#: ../views/boat_view.pt:93
+msgid "Tilgang"
+msgstr ""
+
+#: ../views/boat_view.pt:95
+msgid "Tonnasje"
+msgstr ""
+
+#: ../configure.zcml:39
+msgid "Uninstalls the medialog.skipshistorie add-on."
+msgstr ""
+
+#: ../views/boat_view.pt:96
+msgid "Utgang"
+msgstr ""
+
+#: ../views/boat_view.pt:48
+msgid "Vessel:"
+msgstr ""
+
+#: ../views/boat_view.pt:54
+msgid "brt"
+msgstr ""
+
+#: ../views/boat_view.pt:57
+msgid "del"
+msgstr ""
+
+#. Default: "There are currently no items in this folder."
+#: ../views/skipsliste.py:52
+msgid "description_no_items_in_folder"
+msgstr ""
+
+#: ../views/boat_view.pt:61
+msgid "ex"
+msgstr ""
+
+#: ../views/boat_view.pt:65
+msgid "grt"
+msgstr ""
+
+#: ../portlets/metadata.py:51
+msgid "innhold"
+msgstr ""
+
+#: ../views/boat_view.pt:72
+msgid "kjop"
+msgstr ""
+
+#. Default: "Teknisk info"
+#: ../portlets/metadata.py:61
+msgid "label_metadata"
+msgstr ""
+
+#: ../configure.zcml:30
+msgid "medialog.skipshistorie"
+msgstr ""
+
+#: ../configure.zcml:39
+msgid "medialog.skipshistorie (uninstall)"
+msgstr ""
+
+#: ../views/boat_view.pt:79
+msgid "nrt"
+msgstr ""
+
+#: ../views/boat_view.pt:80
+msgid "off nr"
+msgstr ""
+
+#: ../views/boat_view.pt:90
+msgid "sold"
+msgstr ""
+
+#: ../views/boat_view.pt:91
+msgid "tdw"
+msgstr ""
+
+#: ../views/boat_view.pt:94
+msgid "to"
+msgstr ""
+
+#: ../views/boat_view.pt:98
+msgid "y no"
+msgstr ""
+
+#: ../views/boat_view.pt:97
+msgid "År (y)"
+msgstr ""
+
+#: ../views/boat_view.pt:51
+msgid "Årsak"
+msgstr ""

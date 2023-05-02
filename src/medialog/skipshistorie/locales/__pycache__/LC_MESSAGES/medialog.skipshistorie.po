@@ -1,32 +1,30 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-05-02 13:39+0000\n"
-"PO-Revision-Date: 2023-05-02 15:49+0200\n"
-"Last-Translator: espenm <post@medialog.no>\n"
-"Language-Team: \n"
-"Language: en\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
-"X-Generator: Poedit 3.2\n"
 
 #: ../views/boat_view.pt:52
 msgid "Bemanning"
-msgstr "Crew"
+msgstr ""
 
 #: ../views/boat_view.pt:53
 msgid "Bnr (Sno)"
-msgstr "Sno"
+msgstr ""
 
 #: ../views/boat_view.pt:55
 msgid "Bygge&#229;r"
-msgstr "Year Built"
+msgstr ""
 
 #: ../views/boat_view.pt:56
 msgid "Dekkmaskineri"
@@ -34,35 +32,35 @@ msgstr ""
 
 #: ../views/boat_view.pt:58
 msgid "Dimensjoner"
-msgstr "Size"
+msgstr ""
 
 #: ../views/boat_view.pt:59
 msgid "Disponent"
-msgstr "Manager"
+msgstr ""
 
 #: ../views/boat_view.pt:60
 msgid "Eier"
-msgstr "Owner"
+msgstr ""
 
 #: ../views/boat_view.pt:62
 msgid "Fart"
-msgstr "Speed"
+msgstr ""
 
 #: ../views/boat_view.pt:63
 msgid "Flagg"
-msgstr "Flag"
+msgstr ""
 
 #: ../views/boat_view.pt:64
 msgid "Fremdrift"
-msgstr "Propulsion"
+msgstr ""
 
 #: ../views/boat_view.pt:66
 msgid "Havn"
-msgstr "Port"
+msgstr ""
 
 #: ../views/boat_view.pt:108
 msgid "Historikk"
-msgstr "History in Norwegian"
+msgstr ""
 
 #: ../views/boat_view.pt:113
 msgid "History"
@@ -70,7 +68,7 @@ msgstr ""
 
 #: ../views/boat_view.pt:67
 msgid "Hjelpemaskineri"
-msgstr "Aux"
+msgstr ""
 
 #: ../views/boat_view.pt:68
 msgid "ID new"
@@ -82,19 +80,19 @@ msgstr ""
 
 #: ../views/boat_view.pt:69
 msgid "Kallesignal"
-msgstr "Call Signal"
+msgstr ""
 
 #: ../views/boat_view.pt:71
 msgid "Kj&#248;lemaskineri"
-msgstr "Ref. machinery."
+msgstr ""
 
 #: ../views/boat_view.pt:70
 msgid "Kjeler"
-msgstr "Boiler"
+msgstr ""
 
 #: ../views/boat_view.pt:73
 msgid "Klasse"
-msgstr "Class"
+msgstr ""
 
 #: ../views/boat_view.pt:74
 msgid "Kommunikasjon"
@@ -102,19 +100,19 @@ msgstr ""
 
 #: ../views/boat_view.pt:75
 msgid "Konstruksjon"
-msgstr "Construction"
+msgstr ""
 
 #: ../views/boat_view.pt:76
 msgid "Lastehandtering"
-msgstr "Cargo Handling"
+msgstr ""
 
 #: ../views/boat_view.pt:77
 msgid "Manouvering"
-msgstr "Syst. for manouvering"
+msgstr ""
 
 #: ../views/boat_view.pt:78
 msgid "Navigasjonsutstyr"
-msgstr "Navigation System"
+msgstr ""
 
 #: ../views/boat_view.pt:49
 msgid "Old id:"
@@ -138,27 +136,27 @@ msgstr ""
 
 #: ../views/boat_view.pt:85
 msgid "Senere Norsk"
-msgstr "Later Norwegian"
+msgstr ""
 
 #: ../views/boat_view.pt:86
 msgid "Shipyard"
-msgstr "Shipyard"
+msgstr ""
 
 #: ../views/boat_view.pt:87
 msgid "Skipsnavn"
-msgstr "Ship Name"
+msgstr ""
 
 #: ../views/boat_view.pt:89
 msgid "Skipstype"
-msgstr "Ship type"
+msgstr ""
 
 #: ../views/boat_view.pt:88
 msgid "Skipstype (bruk)"
-msgstr "Shitype (use)"
+msgstr ""
 
 #: ../views/boat_view.pt:92
 msgid "Tidligere navn"
-msgstr "Previous name"
+msgstr ""
 
 #: ../views/boat_view.pt:93
 msgid "Tilgang"
@@ -166,7 +164,7 @@ msgstr ""
 
 #: ../views/boat_view.pt:95
 msgid "Tonnasje"
-msgstr "Tonnage"
+msgstr ""
 
 #: ../configure.zcml:39
 msgid "Uninstalls the medialog.skipshistorie add-on."
@@ -203,7 +201,7 @@ msgstr ""
 
 #: ../portlets/metadata.py:51
 msgid "innhold"
-msgstr "Content"
+msgstr ""
 
 #: ../views/boat_view.pt:72
 msgid "kjop"
@@ -212,7 +210,7 @@ msgstr ""
 #. Default: "Teknisk info"
 #: ../portlets/metadata.py:61
 msgid "label_metadata"
-msgstr "Metadata"
+msgstr ""
 
 #: ../configure.zcml:30
 msgid "medialog.skipshistorie"
@@ -248,7 +246,7 @@ msgstr ""
 
 #: ../views/boat_view.pt:97
 msgid "År (y)"
-msgstr "Year (y)"
+msgstr ""
 
 #: ../views/boat_view.pt:51
 msgid "Årsak"
