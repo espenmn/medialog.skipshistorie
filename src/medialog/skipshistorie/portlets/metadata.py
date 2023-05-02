@@ -1,24 +1,26 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
+
 #from Acquisition import aq_inner
 from medialog.skipshistorie import _
 from plone import schema
 from plone.app.portlets.portlets import base
+from plone.app.portlets.portlets.navigation import Assignment
+from plone.app.portlets.portlets.navigation import INavigationPortlet
+from plone.app.portlets.portlets.navigation import Renderer as NavRenderer
 from plone.memoize.instance import memoize
 from plone.portlets.interfaces import IPortletDataProvider
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from z3c.form import field
 #from zope.component import getMultiAdapter
-from zope.interface import Interface
 from zope.interface import implementer
+from zope.interface import Interface
+
 
 #import json
 #import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
 #import six.moves.urllib.request, six.moves.urllib.error, six.moves.urllib.parse
 
-from plone.app.portlets.portlets.navigation import Renderer as NavRenderer
-from plone.app.portlets.portlets.navigation import INavigationPortlet
-from plone.app.portlets.portlets.navigation import Assignment
 
 
 class IMedialogNavigationPortlet(INavigationPortlet):
@@ -27,7 +29,6 @@ class IMedialogNavigationPortlet(INavigationPortlet):
 class NRenderer(NavRenderer):
    @property
    def available(self):
-       import pdb; pdb.set_trace()
        if self.context.idnew:
            return False
        rootpath = self.getNavRootPath()

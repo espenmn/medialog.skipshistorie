@@ -34,8 +34,7 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that IMedialogSkipshistorieLayer is registered."""
-        from medialog.skipshistorie.interfaces import (
-            IMedialogSkipshistorieLayer)
+        from medialog.skipshistorie.interfaces import IMedialogSkipshistorieLayer
         from plone.browserlayer import utils
         self.assertIn(
             IMedialogSkipshistorieLayer,
@@ -64,8 +63,7 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """Test that IMedialogSkipshistorieLayer is removed."""
-        from medialog.skipshistorie.interfaces import \
-            IMedialogSkipshistorieLayer
+        from medialog.skipshistorie.interfaces import IMedialogSkipshistorieLayer
         from plone.browserlayer import utils
         self.assertNotIn(
             IMedialogSkipshistorieLayer,

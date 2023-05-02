@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="medialog.skipshistorie"
+      metal:use-macro="context/main_template/macros/master">
+<body>
+
+
+  <metal:content-core fill-slot="content-core">
+  <metal:block define-macro="content-core">
+
+
+          <div class="boatLeadImage" tal:condition="python:  context.related_image">
+            <figure class="boatImageContainer"
+                    tal:define="teaser_image python:getattr(context.aq_explicit, 'related_image', False) and context.related_image.to_object;
+                           scale_func teaser_image/@@images;
+                           scaled_image python:teaser_image and scale_func.scale('image', scale='full')"
+                    tal:condition="python: teaser_image">
+
+              <!--a tal:define="here_url context/@@plone_context_state/object_url;
+                             large_image python: scale_func.scale('image', scale='full');"
+                     class="pat-plone-modal"
+                     data-pat-plone-modal="image: true"
+                     tal:attributes="href large_image/url; data-modal-srcset large_image/srcset_attribute"-->
+                <img tal:replace="structure python: scaled_image.tag(css_class='newsImage')" />
+                <figcaption tal:condition="context/image_caption|nothing"
+                            tal:content="context/image_caption" />
+              <!--/a-->
+            </figure>
+          </div>
+
+          <style>
+            .boatLeadImage figure,
+            .boatLeadImage figure img a,
+            .boatLeadImage figure img {
+                width: 100%;
+                margin-bottom: 6px;
+            }
+            .boatLeadImage {
+                margin-bottom: 4rem;
+            }
+
+          </style>
+
+
+
+          <table class="eeece1">
+            <tbody  class="eeece1">
+          <tr tal:condition="context/vessel|None"><td><b>Vessel:</b></td><td> ${context/vessel|None}</td></tr>
+          <tr tal:condition="context/idold|None"><td><b class="plonelink">Old id:</b></td><td> ${context/idold|None}</td></tr>
+
+
+
+          <tr tal:condition="context/arsak|None"><td><b>Åsak</b></td><td>${context/arsak}</td></tr>
+          <tr tal:condition="context/bemanning|None"><td><b>Bemanning</b></td><td>${context/bemanning}</td></tr>
+          <tr tal:condition="context/bnr|None"><td><b>Bnr (Sno)</b></td><td>${context/bnr}</td></tr>
+          <tr tal:condition="context/brt|None"><td><b>brt</b></td><td>${context/brt}</td></tr>
+          <tr tal:condition="context/byggeaar|None"><td><b>Bygge&#229;r</b></td><td>${context/byggeaar}</td></tr>
+          <tr tal:condition="context/dekkmaskineri|None"><td><b>Dekkmaskineri</b></td><td>${context/dekkmaskineri}</td></tr>
+          <tr tal:condition="context/del|None"><td><b>del</b></td><td>${context/del}</td></tr>
+          <tr tal:condition="context/dimensjoner|None"><td><b>Dimensjoner</b></td><td>${context/dimensjoner}</td></tr>
+          <tr tal:condition="context/disponent|None"><td><b>Disponent</b></td><td>${context/disponent}</td></tr>
+          <tr tal:condition="context/eier|None"><td><b>Eier</b></td><td>${context/eier}</td></tr>
+          <tr tal:condition="context/ex|None"><td><b>ex</b></td><td>${context/ex}</td></tr>
+          <tr tal:condition="context/fart|None"><td><b>Fart</b></td><td>${context/fart}</td></tr>
+          <tr tal:condition="context/flagg|None"><td><b>Flagg</b></td><td>${context/flagg}</td></tr>
+          <tr tal:condition="context/fremdrift|None"><td><b>Fremdrift</b></td><td>${context/fremdrift}</td></tr>
+          <tr tal:condition="context/grt|None"><td><b>grt</b></td><td>${context/grt}</td></tr>
+          <tr tal:condition="context/havn|None"><td><b>Havn</b></td><td>${context/havn}</td></tr>
+          <tr tal:condition="context/hjelpemaskineri|None"><td><b>Hjelpemaskineri</b></td><td>${context/hjelpemaskineri}</td></tr>
+          <tr tal:condition="context/idnew|None"><td><b>ID new</b></td><td>${context/idnew}</td></tr>
+          <tr tal:condition="context/kallesignal|None"><td><b>Kallesignal</b></td><td>${context/kallesignal}</td></tr>
+          <tr tal:condition="context/kjeler|None"><td><b>Kjeler</b></td><td>${context/kjeler}</td></tr>
+          <tr tal:condition="context/kjolemaskineri|None"><td><b>Kj&#248;lemaskineri</b></td><td>${context/kjolemaskineri}</td></tr>
+          <tr tal:condition="context/kjop|None"><td><b>kjop</b></td><td>${context/kjop}</td></tr>
+          <tr tal:condition="context/klasse|None"><td><b>Klasse</b></td><td>${context/klasse}</td></tr>
+          <tr tal:condition="context/kommunikasjon|None"><td><b>Kommunikasjon</b></td><td>${context/kommunikasjon}</td></tr>
+          <tr tal:condition="context/konstruksjon|None"><td><b>Konstruksjon</b></td><td>${context/konstruksjon}</td></tr>
+          <tr tal:condition="context/lasthandtering|None"><td><b>Lastehandtering</b></td><td>${context/lasthandtering}</td></tr>
+          <tr tal:condition="context/manouvering|None"><td><b>Manouvering</b></td><td>${context/manouvering}</td></tr>
+          <tr tal:condition="context/navigasjonsutstyr|None"><td><b>Navigasjonsutstyr</b></td><td>${context/navigasjonsutstyr}</td></tr>
+          <tr tal:condition="context/nrt|None"><td><b>nrt</b></td><td>${context/nrt}</td></tr>
+          <tr tal:condition="context/off_nr|None"><td><b>off nr</b></td><td>${context/off_nr}</td></tr>
+          <tr tal:condition="context/owneri|None"><td><b>Owner I</b></td><td>${context/owneri}</td></tr>
+          <tr tal:condition="context/power|None"><td><b>Power</b></td><td>${context/power}</td></tr>
+          <tr tal:condition="context/purch|None"><td><b>Purch</b></td><td>${context/purch}</td></tr>
+          <tr tal:condition="context/rederinummer|None"><td><b>Rederinummer</b></td><td>${context/rederinummer}</td></tr>
+          <tr tal:condition="context/senerenorsk|None"><td><b>Senere Norsk</b></td><td>${context/senerenorsk}</td></tr>
+          <tr tal:condition="context/shipyard|None"><td><b>Shipyard</b></td><td>${context/shipyard}</td></tr>
+          <tr tal:condition="context/skipsnavn|None"><td><b>Skipsnavn</b></td><td>${context/skipsnavn}</td></tr>
+          <tr tal:condition="context/skipstype__bruk_|None"><td><b>Skipstype (bruk)</b></td><td>${context/skipstype__bruk_}</td></tr>
+          <tr tal:condition="context/skipstype|None"><td><b>Skipstype</b></td><td>${context/skipstype}</td></tr>
+          <tr tal:condition="context/sold|None"><td><b>sold</b></td><td>${context/sold}</td></tr>
+          <tr tal:condition="context/tdw|None"><td><b>tdw</b></td><td>${context/tdw}</td></tr>
+          <tr tal:condition="context/tidligere_navn|None"><td><b>Tidligere navn</b></td><td>${context/tidligere_navn}</td></tr>
+          <tr tal:condition="context/tilgang|None"><td><b>Tilgang</b></td><td>${context/tilgang}</td></tr>
+          <tr tal:condition="context/to|None"><td><b>to</b></td><td>${context/to}</td></tr>
+          <tr tal:condition="context/tonnasje|None"><td><b>Tonnasje</b></td><td>${context/tonnasje}</td></tr>
+          <tr tal:condition="context/utgang|None"><td><b>Utgang</b></td><td>${context/utgang}</td></tr>
+          <tr tal:condition="context/year|None"><td><b>År (y)</b></td><td>${context/year}</td></tr>
+          <tr tal:condition="context/yno|None"><td><b>y no</b></td><td>${context/yno}</td></tr>
+
+
+
+          </tbody>
+         </table>
+
+         <div class="divider">&nbsp;</div>
+         <div tal:condition="context/historikk|None"><h3>Historikk</h3><div tal:content="structure context/historikk/output" /></div>
+         <div tal:condition="context/history|None"><h3>History</h3><div tal:content="structure context/history/output" /></div>
+
+         <div class="divider">&nbsp;</div>
+
+         <div tal:content="structure context/text/output" />
+
+    <style>
+    .pre {
+     white-space: pre-wrap;       /* css-3 */
+     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4-6 */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+     padding-bottom: 0;
+     margin-bottom: 0;
+    }
+
+    .divider { 
+      border-bottom: 5px solid silver !important;
+      height: 10px;
+      width: 100%;
+      }
+
+    </style>
+
+
+  </metal:block>
+  </metal:content-core>
+</body>
+</html>

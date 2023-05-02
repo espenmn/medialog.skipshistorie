@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
+
 from Acquisition import aq_inner
 from medialog.skipshistorie import _
 from plone import schema
+from plone.app.portlets.navigation import Renderer as NavRenderer
 from plone.app.portlets.portlets import base
 from plone.memoize.instance import memoize
 from plone.portlets.interfaces import IPortletDataProvider
@@ -12,10 +14,11 @@ from zope.component import getMultiAdapter
 from zope.interface import implementer
 
 import json
+
+
 #import six.moves.urllib.request, six.moves.urllib.parse, six.moves.urllib.error
 #import six.moves.urllib.request, six.moves.urllib.error, six.moves.urllib.parse
 
-from plone.app.portlets.navigation import Renderer as NavRenderer
 
 
 class Nenderer(NavRenderer):

@@ -1,6 +1,8 @@
 #UTF-8
-from plone.indexer import indexer
 from plone.app.contenttypes.interfaces import IDocument
+from plone.indexer import indexer
+
+
 #from plone.indexer.decorator import indexer
 #import six
 #from plone.dexterity.utils import safe_unicode

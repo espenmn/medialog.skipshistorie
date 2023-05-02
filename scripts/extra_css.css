@@ -1,0 +1,115 @@
+.userrole-authenticated .tr-empty,
+.userrole-authenticated .scraped { display: none; }
+
+.template-boat-view  .lead-imaged,
+.template-boat-view  .lead-captioned,
+.template-boat-view tbody > tr.with-image {
+display: none;
+}
+
+            .boatLeadImage figure,
+            .boatLeadImage figure img a,
+            .boatLeadImage figure img {
+                width: 100%;
+                margin-bottom: 6px;
+            }
+            .boatLeadImage {
+                margin-bottom: 4rem;
+            }
+
+.margin-bottom-10 { margin-bottom: 10px }
+
+
+#viewlet-above-content-title .newsImageContainer {
+float: none;
+width: 100%;
+margin-bottom: 3rem;
+}
+
+.divider { margin: 2rem; padding 1rem;}
+
+#viewlet-above-content-title .newsImageContainer  a,
+#viewlet-above-content-title .newsImageContainer  img {
+    width: 100%;
+}
+
+.outer-wrapper div.container, #content-header div.container {max-width: 1270px !important;}
+
+#parent-fieldname-text table { 
+background-color: #f6f3ea ;
+
+}
+
+table thead *::empty ,
+table thead *:empty {
+	display:  none !important;
+}
+
+table > thead > tr > th  {
+   border:  0 none !important;
+border-width: 0 !important;
+}
+
+#filterTags-Båt {
+    display: none;
+}
+h1.media-heading,
+h2.media-heading {
+    font-size: 20px !important,
+}
+
+#content-header { 
+border: 1px solid #013754;
+margin: 0 !important;
+background: #013754;
+}
+
+#portal-logo { 
+    max-width: 350px;
+}
+#portal-searchbox {
+    z-index: 99;
+}
+
+
+table overrides
+div#content-core  table {
+	font-size:120%;
+}
+
+#parent-fieldname-text div table tbody tr td.eeece1 p img {
+	width: 100%;
+}
+
+table.eeece1 tr,
+table.listing tr,
+div#content-core #content table tbody tr,
+td.eeece1 {
+	background:  #f6f3ea  !important;
+color: black;
+
+}
+
+table.eeece1,
+table.listing {
+		background: #f6f3ea;
+color: black;
+}
+
+table.eeece1 td,
+table.listing td,
+div#content-core tbody td  {
+  padding: 0 15px !important;
+  border-color: rgba(0,0,0,0.02688596);
+color: black;
+}
+
+
+
+
+
+
+div#content-core tbody td p {
+  padding: 0;
+  margin: 4px 0
+}
