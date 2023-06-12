@@ -74,15 +74,15 @@ if brains:
 					ref = ref.replace("%C3%86", "251")
 					ref = ref.replace("Ö", "2560")
 					ref = ref.replace("%C3%96", "2560")
-					ref = ref.replace("http://nohost", "")
+					ref = ref.replace("http://nohost", "/skipshistorie")
 					ref = ref.replace("tekster/bilder", "bilder")
 					ref = ref.replace("%C3%86", "251ca").replace("yekster", "tekster")
-					ref = ref.replace.replace("%C3%B8", "o").replace("htm", "")
+					ref = ref.replace("%C3%B8", "o").replace("htm", "")
 
 				if ref and 'file' in ref:
-					import pdb; pdb.set_trace()
+					#import pdb; pdb.set_trace()
 					folder_parts = ref.split("/")
-					index = None
+					indeks = None
 					if 'skipshistorie' in folder_parts:
 						indeks  = folder_parts.index('skipshistorie')
 
@@ -92,7 +92,7 @@ if brains:
 
 				if ref and not 'resolveuid' in ref and not 'http' in ref and not 'file' in ref and not 'mailto' in ref:
 					#folder_path = '/'.join(obj.aq_parent.aq_parent.aq_parent.getPhysicalPath())
-					import pdb; pdb.set_trace()
+					#import pdb; pdb.set_trace()
 					url =  obj.absolute_url().split("/")
 					folder_path = '/' +  '/'.join(url[3:-2]) + "/" + ref
 					#folder_path = folder_path.replace("../", "").replace("--", "-").replace("-.", ".").replace("..", ".")
@@ -107,10 +107,10 @@ if brains:
 					folder_path = folder_path.replace("%C3%86", "251")
 					folder_path = folder_path.replace("Ö", "2560")
 					folder_path = folder_path.replace("%C3%96", "2560")
-					folder_path = folder_path.replace("http://nohost", "")
+					folder_path = folder_path.replace("http://nohost", "/skipshistorie")
 					folder_path = folder_path.replace("tekster/bilder", "bilder")
 					folder_path = folder_path.replace("%C3%86", "251ca").replace("yekster", "tekster")
-					folder_path = folder_path.replace.replace("%C3%B8", "o").replace("htm", "")
+					folder_path = folder_path.replace("%C3%B8", "o").replace("htm", "")
 					#folder_path = folder_path.replace("(", "")
 					#folder_path = folder_path.replace(")", "")
 					#folder_path = folder_path.replce("/tekster/bilder", "/bilder")
@@ -198,7 +198,7 @@ if brains:
 
 
 		except TypeError:
-			import pdb; pdb.set_trace()
+			#import pdb; pdb.set_trace()
 			#transaction.commit()
 			print('type error')
 			print(reflink)
@@ -218,7 +218,7 @@ if brains:
 			print('attribute eror')
 
 			print(ref)
-			import pdb; pdb.set_trace()
+			#import pdb; pdb.set_trace()
 			aaa = 1
 
 

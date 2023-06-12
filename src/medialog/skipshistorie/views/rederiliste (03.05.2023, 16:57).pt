@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      metal:use-macro="context/@@main_template/macros/master"
+      xml:lang="en"
+      i18n:domain="plone">
+
+<body>
+      <metal:content-core fill-slot="content-core">
+        <div><table class="datatable pat-tablesorter listing">
+            <thead>
+              <tr>
+                <th>Rederi</th>
+                <th>Redernr</th>
+                <th>By</th>
+                <th>I bruk<th>
+              </tr>
+            </thead>
+            <tbody>
+              <tal:repeat  tal:repeat="item context/results">
+
+                    <tr tal:define="
+                           obj item/getObject;
+                           item_url item/getURL;
+                           item_rederinummer obj/rederinummer|None;
+                           item_bruk obj/bruk|None;
+                           item_by obj/by;
+                           item_title obj/Title;
+                           item_type item/PortalType">
+                      <td> ${item_title}</td>
+                      <td>${item_rederinummer}</td>
+                      <td>${item_by}</td>
+                      <td>${item_bruk} xxx</td>
+                 </tr>
+               </tal:repeat>
+            </tbody>
+          <table>
+
+          </div>
+
+
+
+
+      <script>require([
+        'jquery',
+        'https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js'
+        ], function(Base) {
+          'use strict';
+          $('.datatable').DataTable();
+        });
+      </script>
+
+      <style>
+        .dataTables_length label { line-height: 3em: }
+      </style>
+      </metal:content-core>
+  </body>
+</html>

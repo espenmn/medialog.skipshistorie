@@ -8,16 +8,20 @@
 
 <aside class="portlet portletMetadata">
   <header class="portletHeader"><span>Teknisk info</span></header>
- 
+      <p>
       <ul>
         <li tal:condition="context/idold|None"><b class="plonelink">Old id:</b> ${context/idold|None}</li>
         <li tal:condition="context/idnew|None"><b>New id: </b>${context/idnew|None}</li>
         <li tal:condition="context/flagg|None"><b>Flagg: </b>${context/flagg|None}</li>
+        <li tal:condition="context/havn|None"><b>Havn: </b>${context/havn|None}</li>
         <li tal:condition="context/kallesignal|None"><b>Kallesignal: </b>${context/kallesignal|None}</li>
+
       </ul>
+    </p>
 
 </aside>
 <body>
+<a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
 </html>
 <style>
 .pre {

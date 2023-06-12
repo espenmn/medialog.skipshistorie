@@ -1,7 +1,7 @@
 #python 3
 #bin/instance stop; bin/instance run  find_havn_etc.py  -O skipshistorie
 #DexterityContent.UID o
- 
+
 #import pandas as pd
 #import openpyxl
 from zope.lifecycleevent import modified
@@ -18,8 +18,8 @@ import re
 
 setSite(app['skipshistorie'])
 
-brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='descending')
-#brains = app.skipshistorie.portal_catalog(id="ukj10118911000000-spero")
+brains = app.skipshistorie.portal_catalog(portal_type=["Document", "skip"], sort_on="modified", sort_order='descending')
+#brains = app.skipshistorie.portal_catalog(id="lvk20019350300000-pol-vi")
 
 	#import pdb; pdb.set_trace()
 
@@ -31,12 +31,12 @@ if brains:
 
 	for brain in brains:
 			count += 1
-		
+
 			obj = brain.getObject()
 			if count % 100 == 1:
 				print(count)
 				print(obj.Title())
-			
+
 			#print(obj.Title)
 			try:
 				if '- ' in obj.Title():
@@ -47,6 +47,11 @@ if brains:
 				#import pdb; pdb.set_trace()
 				obj.Title = obj.Title()
 
+			if hasattr(obj, 'havn'):
+				if obj.havn and obj.portal_type=="Documemt":
+					print('changed one')
+					obj.portal_tupe = "skip"
+
 			#print(obj.absolute_url().replace("http://nohost/skipshistorie/", "http://skipshistorie.lokalhistorie.org/"))
 			primary_field = IPrimaryFieldInfo(obj)
 			if isinstance(primary_field.field, RichText):
@@ -54,14 +59,15 @@ if brains:
 						oldtext = obj.text.output
 						oldtext = oldtext.replace(' lang="NO-BOK"', "")
 						oldtext = oldtext.replace(' lang="EN-US"', "")
-						oldtext = oldtext.replace("</span><span>", "")
+						oldtext = oldtext.replace("</span><span>", "").replace("  ", " ").replace("  ", " ")
 						soup = BeautifulSoup(oldtext, 'html.parser')
-						
+
 						#indField = soup.find(text=entry[1])
-						
+
 						findText = [
-						
+                            ['klasse', 'Klasse (Class).:'],
 							[ 'fangstutstyr',   '  Fangstutstyr: (catching equipm.)'],
+                            [   'fangstutstyr', ' (catching equipm.):'],
 							[ 'fangstutstyr',   ' Fangstutstyr (Catching equip.)'],
 							[ 'fangstutstyr',   'Fangstutstyr:(catching equipm.)'],
 							[ 'fangstutstyr',  '   Fangstutstyr. (catching equipm.)'],
@@ -188,7 +194,7 @@ if brains:
 							['disponent', 'Disponent (manager)'],
 							['disponent', 'Disponent (manager)'],
 							['eier', '   Eier (owner)'],
-							['eier', '  Eier (owner)'], 
+							['eier', '  Eier (owner)'],
 							['eier', ' Eier (owner):'],
 							['eier', ' Eier (owner):'],
 							['eier', ' Eier (owner)'],
@@ -432,6 +438,8 @@ if brains:
 							['klasse', 'Klasse (Class).'],
 							['klasse', 'Klasse (Class)'],
 							['klasse', 'Klasse/Class.'],
+                            ['klasse', 'Klasse (Class).:'],
+                            ['kommunikasjon', ' Kommunikasjons utstyr (comm.equipm.):'],
 							['kommunikasjon', '   Kommunikasjon  (comm.)'],
 							['kommunikasjon', '   Kommunikasjons utstyr (comm. equipm.)'],
 							['kommunikasjon', '   Kommunikasjons utstyr (comm.equipm.)'],
@@ -554,7 +562,8 @@ if brains:
 							['lasthandtering', 'Lasthåndteringsyst.(cargo handling): '],
 							['lasthandtering', 'Lasthåndteringsyst.(cargo handling)'],
 							['lasthandtering', 'Lasthåndteringsyst.(cargo handling)'],
-							['manouvering', '   Manøversystemer  (syst. for manouvering)'],
+                            ['lasthandtering', ' (cargo handling.):'],
+                            ['manouvering', '   Manøversystemer  (syst. for manouvering)'],
 							['manouvering', '  Manøversystemer (syst. for manouvering)'],
 							['manouvering', ' Manøversystemer ' ],
 							['manouvering', ' Manøversystemer' ],
@@ -575,6 +584,7 @@ if brains:
 							['navigasjonsutstyr', 'Navigasjonsutstyr'],
 							['navigasjonsutstyr', 'Navigasjonsutstyr'],
 							['off_nr', '   ID no'],
+                            ['off_nr', 'ID. No.:'],
 							['off_nr', '   Id.no'],
 							['off_nr', '   Off. no.'],
 							['off_nr', '   Off.no  (IMO)'],
@@ -689,7 +699,7 @@ if brains:
 							['power', 'Tot. el. kraft (el. power): '],
 							['power', 'Tot. el. kraft (el. power):'],
 							['power', 'Tot. el. kraft (el. power):'],
-							['power', 'Tot. el. kraft (el. power):'],	
+							['power', 'Tot. el. kraft (el. power):'],
 							['power', 'Tot. el. kraft (el. power)'],
 							['power', 'Tot. el. kraft (el. power)'],
 							['power', 'Tot. el. kraft (el.power):'],
@@ -747,10 +757,10 @@ if brains:
 		                    ['havn', 'Havn (port):'],
 	                        ['flagg', ' Flagg (flag):'],
   		                    ['havn', ' Havn (port):'],
-							
+
 
 						]
-						
+
 						#import pdb; pdb.set_trace()
 
 						for entry in findText:
@@ -759,24 +769,27 @@ if brains:
 							findField = soup.find(text=entry[1])
 
 							if findField:
-									#import pdb; pdb.set_trace()
-									#print('setting field')
-									#print(entry[0])
-									the_td = findField.find_parent('td')
-									the_td['class'] = 'scraped'
-									the_td = findField.find_parent('td').find_next('td')
-									the_td['class'] = 'scraped'
+								#print('found')
+								#print(entry[0])
+								#import pdb; pdb.set_trace()
+								#print('setting field')
+								#print(entry[0])
+								the_td = findField.find_parent('td')
+								the_td['class'] = 'scraped'
+								the_td = findField.find_parent('td').find_next('td')
+								the_td['class'] = 'scraped'
 
-									#if getattr(obj, entry[0]):
-									#import pdb; pdb.set_trace()
-									if len(str(getattr(obj, entry[0])))<=2:
+								#if getattr(obj, entry[0]):
+								#import pdb; pdb.set_trace()
+								if len(str(getattr(obj, entry[0])))<=5:
 											#try:
 											value = findField.find_parent('td').find_next('td').text
 											value = value.strip().replace("  ", " ")
-											if len(str(value)) >= 2 or value==None:
+											if len(str(value)) >= 2:
+												print('value set')
 												setattr(obj, entry[0], value)
 												#print(obj.absolute_url().replace("http://nohost/skipshistorie/", "http://skipshistorie.lokalhistorie.org/"))
-			
+
 
 											#except AttributeError:
 											#abv = "123"
@@ -796,11 +809,22 @@ if brains:
 								#my_tr = bilde.find_parent('td')
 								#my_tr['class'] = 'with-image'
 								try:
-									bilde.find_parent('tr')['class'] = 'with-image'
+									abc = '123'
+									#bilde.find_parent('tr')['class'] = 'with-image'
 								except TypeError:
 									abc = '123'
 									print('error')
 									#Do nothing
+
+						if obj.portal_type == 'skip':
+							hist_type= type(obj.historikk)
+
+							if  str(hist_type) == "<class 'str'>":
+								obj.historikk = RichTextValue(obj.historikk)
+
+							hist_type= type(obj.history)
+							if  str(hist_type) == "<class 'str'>":
+								obj.history = RichTextValue(obj.history)
 
 						obj.text = RichTextValue(str(soup))
 						#obj.setTitle(obj.Title().title())
@@ -809,19 +833,8 @@ if brains:
 						if ant % 100 == 1:
 							print('transaction')
 							transaction.commit()
-						#modified(obj)
 
 
 
-			#except KeyError as ke:
-			#import pdb; pdb.set_trace()
-			#my_id  = brain.id
-			#print('eroor ke')
-
-			#print(ke)
-
-
-					##move transaction to end of loop
 	print(ant)
 	transaction.commit()
-

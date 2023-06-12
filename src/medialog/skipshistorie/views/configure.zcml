@@ -16,14 +16,74 @@
     />
 
 
+  <browser:page
+    name="skipsliste"
+    for="*"
+    class=".skipsliste.FolderView"
+    template="skipsliste.pt"
+    permission="zope2.View"
+    layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
+    />
+
+  <browser:page
+    name="rederiliste"
+    for="*"
+    template="rederiliste.pt"
+    permission="zope2.View"
+    layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
+    />
+
+
       <browser:page
-        name="skipsliste"
-        for="plone.dexterity.interfaces.IDexterityContainer"
-        class=".skipsliste.FolderView"
-        template="skipsliste.pt"
+        name="rederito"
+        for="*"
+        template="rederito.pt"
         permission="zope2.View"
         layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
         />
 
+
+        <browser:page
+          name="rederitre"
+          for="*"
+          template="rederitre.pt"
+          permission="zope2.View"
+          layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
+          />
+
+
+    <browser:page
+      name="rederi-liste"
+      for="*"
+      template="rederi-liste.pt"
+      permission="zope2.View"
+      layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
+      />
+
+    <!--pp client templates -->
+    <browser:page
+        name="asHTML"
+        for="*"
+        template="skip.pt"
+        permission="zope2.View"
+        class=".skip.SkipView"
+    />
+
+
+    <browser:page
+      name="toPDF"
+      for="*"
+      class=".skip.toPDF"
+      permission="zope2.View"
+      />
+
+      <browser:page
+        name="skip-view"
+        for="*"
+        class=".boat_view.BoatView"
+        template="skip_view.pt"
+        permission="zope2.View"
+        layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
+        />
 
 </configure>

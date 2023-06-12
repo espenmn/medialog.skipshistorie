@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-05-02 13:39+0000\n"
-"PO-Revision-Date: 2023-05-02 15:56+0200\n"
+"PO-Revision-Date: 2023-06-06 14:17+0200\n"
 "Last-Translator: espenm <post@medialog.no>\n"
 "Language-Team: \n"
 "Language: no\n"
@@ -122,15 +122,15 @@ msgstr ""
 
 #: ../views/boat_view.pt:81
 msgid "Owner I"
-msgstr ""
+msgstr "Eier 1"
 
 #: ../views/boat_view.pt:82
 msgid "Power"
-msgstr ""
+msgstr "Maskinkraft"
 
 #: ../views/boat_view.pt:83
 msgid "Purch"
-msgstr ""
+msgstr "Anskaffet"
 
 #: ../views/boat_view.pt:84
 msgid "Rederinummer"
@@ -191,15 +191,15 @@ msgstr "del"
 #. Default: "There are currently no items in this folder."
 #: ../views/skipsliste.py:52
 msgid "description_no_items_in_folder"
-msgstr ""
+msgstr "Antall i mappen"
 
 #: ../views/boat_view.pt:61
 msgid "ex"
-msgstr ""
+msgstr "Tidligere"
 
 #: ../views/boat_view.pt:65
 msgid "grt"
-msgstr ""
+msgstr "bra"
 
 #: ../portlets/metadata.py:51
 msgid "innhold"
@@ -224,7 +224,7 @@ msgstr ""
 
 #: ../views/boat_view.pt:79
 msgid "nrt"
-msgstr ""
+msgstr "nrt"
 
 #: ../views/boat_view.pt:80
 msgid "off nr"
@@ -232,19 +232,19 @@ msgstr "off nr"
 
 #: ../views/boat_view.pt:90
 msgid "sold"
-msgstr ""
+msgstr "Solgt"
 
 #: ../views/boat_view.pt:91
 msgid "tdw"
-msgstr ""
+msgstr "tdw"
 
 #: ../views/boat_view.pt:94
 msgid "to"
-msgstr ""
+msgstr "til"
 
 #: ../views/boat_view.pt:98
 msgid "y no"
-msgstr ""
+msgstr "Bygger (y)"
 
 #: ../views/boat_view.pt:97
 msgid "År (y)"

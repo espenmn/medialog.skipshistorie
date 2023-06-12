@@ -54,6 +54,11 @@ setup(
         'plone.api>=1.8.4',
         'plone.restapi',
         'plone.app.dexterity',
+        'pp.client-plone',
+        'beautifulsoup4',
+        'pdfkit',
+        'jinja2',
+        'wkhtmltopdf',
     ],
     extras_require={
         'test': [

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-05-02 13:39+0000\n"
-"PO-Revision-Date: 2023-05-02 15:49+0200\n"
+"PO-Revision-Date: 2023-06-06 14:21+0200\n"
 "Last-Translator: espenm <post@medialog.no>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -30,7 +30,7 @@ msgstr "Year Built"
 
 #: ../views/boat_view.pt:56
 msgid "Dekkmaskineri"
-msgstr ""
+msgstr "Deck Machinery"
 
 #: ../views/boat_view.pt:58
 msgid "Dimensjoner"
@@ -66,7 +66,7 @@ msgstr "History in Norwegian"
 
 #: ../views/boat_view.pt:113
 msgid "History"
-msgstr ""
+msgstr "History"
 
 #: ../views/boat_view.pt:67
 msgid "Hjelpemaskineri"
@@ -98,7 +98,7 @@ msgstr "Class"
 
 #: ../views/boat_view.pt:74
 msgid "Kommunikasjon"
-msgstr ""
+msgstr "Communication"
 
 #: ../views/boat_view.pt:75
 msgid "Konstruksjon"
@@ -122,19 +122,19 @@ msgstr ""
 
 #: ../views/boat_view.pt:81
 msgid "Owner I"
-msgstr ""
+msgstr "Owner 1"
 
 #: ../views/boat_view.pt:82
 msgid "Power"
-msgstr ""
+msgstr "Power"
 
 #: ../views/boat_view.pt:83
 msgid "Purch"
-msgstr ""
+msgstr "Purch"
 
 #: ../views/boat_view.pt:84
 msgid "Rederinummer"
-msgstr ""
+msgstr "Shipowner ID"
 
 #: ../views/boat_view.pt:85
 msgid "Senere Norsk"
@@ -162,7 +162,7 @@ msgstr "Previous name"
 
 #: ../views/boat_view.pt:93
 msgid "Tilgang"
-msgstr ""
+msgstr "Purchased"
 
 #: ../views/boat_view.pt:95
 msgid "Tonnasje"
@@ -174,32 +174,32 @@ msgstr ""
 
 #: ../views/boat_view.pt:96
 msgid "Utgang"
-msgstr ""
+msgstr "Exit"
 
 #: ../views/boat_view.pt:48
 msgid "Vessel:"
-msgstr ""
+msgstr "Vessel:"
 
 #: ../views/boat_view.pt:54
 msgid "brt"
-msgstr ""
+msgstr "grt"
 
 #: ../views/boat_view.pt:57
 msgid "del"
-msgstr ""
+msgstr "leveret"
 
 #. Default: "There are currently no items in this folder."
 #: ../views/skipsliste.py:52
 msgid "description_no_items_in_folder"
-msgstr ""
+msgstr "Items in folder"
 
 #: ../views/boat_view.pt:61
 msgid "ex"
-msgstr ""
+msgstr "ex"
 
 #: ../views/boat_view.pt:65
 msgid "grt"
-msgstr ""
+msgstr "get"
 
 #: ../portlets/metadata.py:51
 msgid "innhold"
@@ -207,7 +207,7 @@ msgstr "Content"
 
 #: ../views/boat_view.pt:72
 msgid "kjop"
-msgstr ""
+msgstr "purchased"
 
 #. Default: "Teknisk info"
 #: ../portlets/metadata.py:61
@@ -224,27 +224,27 @@ msgstr ""
 
 #: ../views/boat_view.pt:79
 msgid "nrt"
-msgstr ""
+msgstr "not"
 
 #: ../views/boat_view.pt:80
 msgid "off nr"
-msgstr ""
+msgstr "off no"
 
 #: ../views/boat_view.pt:90
 msgid "sold"
-msgstr ""
+msgstr "sold"
 
 #: ../views/boat_view.pt:91
 msgid "tdw"
-msgstr ""
+msgstr "tow"
 
 #: ../views/boat_view.pt:94
 msgid "to"
-msgstr ""
+msgstr "to"
 
 #: ../views/boat_view.pt:98
 msgid "y no"
-msgstr ""
+msgstr "yard no"
 
 #: ../views/boat_view.pt:97
 msgid "År (y)"
@@ -252,4 +252,4 @@ msgstr "Year (y)"
 
 #: ../views/boat_view.pt:51
 msgid "Årsak"
-msgstr ""
+msgstr "Cause"
