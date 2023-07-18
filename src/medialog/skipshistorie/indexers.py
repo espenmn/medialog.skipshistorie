@@ -22,7 +22,7 @@ def off_nrIndexer(self):
 @indexer(IDocument)
 def konstruksjonIndexer(self):
     if self.portal_type=="skip":
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
         return str(self.konstruksjon)
 
 
