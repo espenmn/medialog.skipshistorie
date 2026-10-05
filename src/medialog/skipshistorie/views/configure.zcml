@@ -76,8 +76,8 @@
       class=".skip.toPDF"
       permission="zope2.View"
       />
- 
-    <browser:page
+
+      <browser:page
         name="skip-view"
         for="*"
         class=".boat_view.BoatView"

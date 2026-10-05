@@ -29,6 +29,7 @@ class ISkipView(Interface):
 class SkipView(BrowserView):
     """ Converter view forSkip.
     """
+    
     template = ViewPageTemplateFile('skip.pt')
 
 
@@ -60,11 +61,29 @@ class toPDF(BrowserView):
         """
         request = self.request
         context = self.context
+        portal_type = context.portal_type
         pdfTitle = self.context.title + '.pdf'
-        url = "{}/skip-view".format( self.context.absolute_url() )
+        
+            
+        if portal_type in ("Folder", "Collection"):
+            items = self.context.listFolderContents()
+        else:
+            items = [self.context]
+
+        urls = []
+
+        for item in items:
+            url = item.absolute_url()
+
+            if item.portal_type == "Skip":
+                url = "{}/skip-view".format(url)
+
+            urls.append(url)
+            
+            
 
         ## Need to use 'tempfile for this in case two people downloads at the same time'
-        pdfFile = pdfkit.from_url(url, "out.pdf")
+        pdfFile = pdfkit.from_url(urls, "out.pdf")
         R = self.request.RESPONSE
 
         #Probably add all the files to a folder and zip it instead
@@ -80,3 +99,6 @@ class toPDF(BrowserView):
 
         return pdf_data
         #return pdfFile
+
+
+ 
