@@ -72,14 +72,14 @@
     <browser:page
       name="toPDF"
       for="plone.app.contenttypes.interfaces.IFolder"
-      class=".skip.toPDF"
+      class=".skip.toPDFF"
       permission="zope2.View"
       />
 
     <browser:page
       name="toPDF"
       for="*"
-      class=".skip.toPDFF"
+      class=".skip.toPDF"
       permission="zope2.View"
       />
 

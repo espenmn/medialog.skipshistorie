@@ -29,7 +29,12 @@ class ISkipView(Interface):
 class SkipView(BrowserView):
     """ Converter view forSkip.
     """
+    
+    # If content type is something
     template = ViewPageTemplateFile('skip.pt')
+    # else
+    #template = ViewPageTemplateFile('skipfolder.pt')
+    
 
 
     def __init__(self, context, request, expr, engine):
