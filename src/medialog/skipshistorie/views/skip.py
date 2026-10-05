@@ -12,14 +12,11 @@ from jinja2 import FileSystemLoader
 from pdfkit import from_string
 import pdfkit
 
+
+
 import os
 import tempfile
-from pypdf import PdfWriter
-
-
-import os
-#import tempfile
-#import zipfile
+import zipfile
 
 
 
@@ -72,57 +69,56 @@ class toPDF(BrowserView):
             items = self.context.listFolderContents()
         else:
             items = [self.context]
- 
-       
+
         urls = []
 
         for item in items:
-            url = item.absolute_url()
+            # url = item.absolute_url()
 
-            if item.portal_type == "Skip":
+            if item.portal_type in ["Skip", "skip"]:
                 url = "{}/skip-view".format(url)
 
             urls.append(url)
+   
+
+        
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+
+                zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
+
+                with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:
+
+                    for index, url in enumerate(urls, 1):
+
+                        pdf_path = os.path.join(
+                            temp_dir,
+                            "document-{}.pdf".format(index)
+                        )
+
+                        # Create PDF
+                        pdfkit.from_url(url, pdf_path)
+
+                        # Add PDF to ZIP
+                        zip_file.write(
+                            pdf_path,
+                            arcname="document-{}.pdf".format(index)
+                        )
+
+                # Read completed ZIP before TemporaryDirectory disappears
+                with open(zip_path, "rb") as f:
+                    zip_data = f.read()
 
 
-        # Convert each URL separately
-        writer = PdfWriter()
+        R = self.request.RESPONSE
 
-        for url in urls:
-            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                tmp_pdf = tmp.name
-
-            try:
-                pdfkit.from_url(url, tmp_pdf)
-
-                # Add this PDF to the final document
-                from pypdf import PdfReader
-                reader = PdfReader(tmp_pdf)
-
-                for page in reader.pages:
-                    writer.add_page(page)
-
-            finally:
-                if os.path.exists(tmp_pdf):
-                    os.unlink(tmp_pdf)
-
-
-        with open("out.pdf", "wb") as f:
-            writer.write(f)
-                    
-      
-        import io
-
-        pdf_data = io.BytesIO()
-        writer.write(pdf_data)
-
-        pdf_data.seek(0)
-
-        self.request.response.setHeader("Content-Type", "application/pdf")
-        self.request.response.setHeader(
-            "Content-Disposition",
-            'inline; filename="out.pdf"'
+        R.setHeader("Content-Type", "application/zip")
+        R.setHeader(
+                "Content-Disposition",
+                'attachment; filename="{}.zip"'.format(pdfTitle)
         )
+        R.setHeader("Content-Length", len(zip_data))
 
-        return pdf_data.getvalue()
+        return zip_data
+
 
