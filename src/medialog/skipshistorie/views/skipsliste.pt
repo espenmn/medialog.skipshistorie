@@ -12,7 +12,7 @@
     <metal:title fill-slot="content-title">
         <div class="flex flex-wrapp">
           <h1 tal:replace="structure context/@@title" />
-          <span class="icon-controlpanel-FilterSettings"><span>Søk: <input id="myFilter" /></span></span>
+          <span class="icon-controlpanel-FilterSettings"><span>Søk/Filter: <input id="myFilter" /></span></span>
         </div>
     </metal:title>
 
