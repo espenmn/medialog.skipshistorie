@@ -80,3 +80,7 @@ class toPDF(BrowserView):
 
         return pdf_data
         #return pdfFile
+
+
+class toPDFF(toPDF):
+    template = ViewPageTemplateFile('skipfolder.pt')

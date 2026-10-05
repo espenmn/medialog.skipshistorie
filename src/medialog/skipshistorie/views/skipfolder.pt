@@ -1,0 +1,363 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en" i18n:domain="plone">
+  <head>
+    <title tal:content="context/Title" />
+  </head>
+  <body>
+
+    <metal:content-core fill-slot="content-core">
+      <metal:block define-macro="content-core">
+
+        <metal:listingmacro define-macro="listing">
+          <tal:results define="
+                         items view/batch;
+                       ">
+            <tal:listing condition="items" tal:repeat="obj items">
+
+              <h1 tal:content="obj/Title" />
+              <div class="boatLeadImage" tal:condition="python:  context.related_image">
+                <figure class="boatImageContainer" tal:define="teaser_image python:getattr(context.aq_explicit, 'related_image', False) and context.related_image.to_object;
+                             scale_func teaser_image/@@images;
+                             scaled_image python:teaser_image and scale_func.scale('image', scale='full')" tal:condition="python: teaser_image">
+
+
+                  <img tal:replace="structure python: scaled_image.tag(css_class='newsImage')" />
+                  <figcaption tal:condition="obj/image_caption|nothing" tal:content="obj/image_caption" />
+                  <!--/a-->
+                </figure>
+              </div>
+
+
+              <table class="eeece1">
+                <tbody class="eeece1">
+                  <tr tal:condition="obj/vessel|None">
+                    <td>
+                      <b i18n:translate="">Vessel:</b>
+                    </td>
+                    <td> ${obj/vessel|None}</td>
+                  </tr>
+                  <tr tal:condition="obj/idold|None">
+                    <td>
+                      <b class="plonelink" i18n:translate="">Old id:</b>
+                    </td>
+                    <td> ${obj/idold|None}</td>
+                  </tr>
+
+                  <tr tal:condition="obj/arsak|None">
+                    <td>
+                      <b i18n:translate="">Årsak</b>
+                    </td>
+                    <td>${obj/arsak}</td>
+                  </tr>
+                  <tr tal:condition="obj/bemanning|None">
+                    <td>
+                      <b i18n:translate="">Bemanning</b>
+                    </td>
+                    <td>${obj/bemanning}</td>
+                  </tr>
+                  <tr tal:condition="obj/bnr|None">
+                    <td>
+                      <b i18n:translate="">Bnr (Sno)</b>
+                    </td>
+                    <td>${obj/bnr}</td>
+                  </tr>
+                  <tr tal:condition="obj/brt|None">
+                    <td>
+                      <b i18n:translate="">brt</b>
+                    </td>
+                    <td>${obj/brt}</td>
+                  </tr>
+                  <tr tal:condition="obj/byggeaar|None">
+                    <td>
+                      <b i18n:translate="">Bygge&#229;r</b>
+                    </td>
+                    <td>${obj/byggeaar}</td>
+                  </tr>
+                  <tr tal:condition="obj/dekkmaskineri|None">
+                    <td>
+                      <b i18n:translate="">Dekkmaskineri</b>
+                    </td>
+                    <td>${obj/dekkmaskineri}</td>
+                  </tr>
+                  <tr tal:condition="obj/del|None">
+                    <td>
+                      <b i18n:translate="">del</b>
+                    </td>
+                    <td>${obj/del}</td>
+                  </tr>
+                  <tr tal:condition="obj/dimensjoner|None">
+                    <td>
+                      <b i18n:translate="">Dimensjoner</b>
+                    </td>
+                    <td>${obj/dimensjoner}</td>
+                  </tr>
+                  <tr tal:condition="obj/disponent|None">
+                    <td>
+                      <b i18n:translate="">Disponent</b>
+                    </td>
+                    <td>${obj/disponent}</td>
+                  </tr>
+                  <tr tal:condition="obj/eier|None">
+                    <td>
+                      <b i18n:translate="">Eier</b>
+                    </td>
+                    <td>${obj/eier}</td>
+                  </tr>
+                  <tr tal:condition="obj/ex|None">
+                    <td>
+                      <b i18n:translate="">ex</b>
+                    </td>
+                    <td>${obj/ex}</td>
+                  </tr>
+                  <tr tal:condition="obj/fart|None">
+                    <td>
+                      <b i18n:translate="">Fart</b>
+                    </td>
+                    <td>${obj/fart}</td>
+                  </tr>
+                  <tr tal:condition="obj/flagg|None">
+                    <td>
+                      <b i18n:translate="">Flagg</b>
+                    </td>
+                    <td>${obj/flagg}</td>
+                  </tr>
+                  <tr tal:condition="obj/fremdrift|None">
+                    <td>
+                      <b i18n:translate="">Fremdrift</b>
+                    </td>
+                    <td>${obj/fremdrift}</td>
+                  </tr>
+                  <tr tal:condition="obj/grt|None">
+                    <td>
+                      <b i18n:translate="">grt</b>
+                    </td>
+                    <td>${obj/grt}</td>
+                  </tr>
+                  <tr tal:condition="obj/havn|None">
+                    <td>
+                      <b i18n:translate="">Havn</b>
+                    </td>
+                    <td>${obj/havn}</td>
+                  </tr>
+                  <tr tal:condition="obj/hjelpemaskineri|None">
+                    <td>
+                      <b i18n:translate="">Hjelpemaskineri</b>
+                    </td>
+                    <td>${obj/hjelpemaskineri}</td>
+                  </tr>
+                  <tr tal:condition="obj/idnew|None">
+                    <td>
+                      <b i18n:translate="">ID new</b>
+                    </td>
+                    <td>${obj/idnew}</td>
+                  </tr>
+                  <tr tal:condition="obj/kallesignal|None">
+                    <td>
+                      <b i18n:translate="">Kallesignal</b>
+                    </td>
+                    <td>${obj/kallesignal}</td>
+                  </tr>
+                  <tr tal:condition="obj/kjeler|None">
+                    <td>
+                      <b i18n:translate="">Kjeler</b>
+                    </td>
+                    <td>${obj/kjeler}</td>
+                  </tr>
+                  <tr tal:condition="obj/kjolemaskineri|None">
+                    <td>
+                      <b i18n:translate="">Kj&#248;lemaskineri</b>
+                    </td>
+                    <td>${obj/kjolemaskineri}</td>
+                  </tr>
+                  <tr tal:condition="obj/kjop|None">
+                    <td>
+                      <b i18n:translate="">kjop</b>
+                    </td>
+                    <td>${obj/kjop}</td>
+                  </tr>
+                  <tr tal:condition="obj/klasse|None">
+                    <td>
+                      <b i18n:translate="">Klasse</b>
+                    </td>
+                    <td>${obj/klasse}</td>
+                  </tr>
+                  <tr tal:condition="obj/kommunikasjon|None">
+                    <td>
+                      <b i18n:translate="">Kommunikasjon</b>
+                    </td>
+                    <td>${obj/kommunikasjon}</td>
+                  </tr>
+                  <tr tal:condition="obj/konstruksjon|None">
+                    <td>
+                      <b i18n:translate="">Konstruksjon</b>
+                    </td>
+                    <td>${obj/konstruksjon}</td>
+                  </tr>
+                  <tr tal:condition="obj/lasthandtering|None">
+                    <td>
+                      <b i18n:translate="">Lastehandtering</b>
+                    </td>
+                    <td>${obj/lasthandtering}</td>
+                  </tr>
+                  <tr tal:condition="obj/manouvering|None">
+                    <td>
+                      <b i18n:translate="">Manouvering</b>
+                    </td>
+                    <td>${obj/manouvering}</td>
+                  </tr>
+                  <tr tal:condition="obj/navigasjonsutstyr|None">
+                    <td>
+                      <b i18n:translate="">Navigasjonsutstyr</b>
+                    </td>
+                    <td>${obj/navigasjonsutstyr}</td>
+                  </tr>
+                  <tr tal:condition="obj/nrt|None">
+                    <td>
+                      <b i18n:translate="">nrt</b>
+                    </td>
+                    <td>${obj/nrt}</td>
+                  </tr>
+                  <tr tal:condition="obj/off_nr|None">
+                    <td>
+                      <b i18n:translate="">IMO / off nr</b>
+                    </td>
+                    <td>${obj/off_nr}</td>
+                  </tr>
+                  <tr tal:condition="obj/owneri|None">
+                    <td>
+                      <b i18n:translate="">Owner I</b>
+                    </td>
+                    <td>${obj/owneri}</td>
+                  </tr>
+                  <tr tal:condition="obj/power|None">
+                    <td>
+                      <b i18n:translate="">Power</b>
+                    </td>
+                    <td>${obj/power}</td>
+                  </tr>
+                  <tr tal:condition="obj/purch|None">
+                    <td>
+                      <b i18n:translate="">Purch</b>
+                    </td>
+                    <td>${obj/purch}</td>
+                  </tr>
+                  <tr tal:condition="obj/rederinummer|None">
+                    <td>
+                      <b i18n:translate="">Rederinummer</b>
+                    </td>
+                    <td>${obj/rederinummer}</td>
+                  </tr>
+                  <tr tal:condition="obj/senerenorsk|None">
+                    <td>
+                      <b i18n:translate="">Senere Norsk</b>
+                    </td>
+                    <td>${obj/senerenorsk}</td>
+                  </tr>
+                  <tr tal:condition="obj/shipyard|None">
+                    <td>
+                      <b i18n:translate="">Shipyard</b>
+                    </td>
+                    <td>${obj/shipyard}</td>
+                  </tr>
+                  <tr tal:condition="obj/skipsnavn|None">
+                    <td>
+                      <b i18n:translate="">Skipsnavn</b>
+                    </td>
+                    <td>${obj/skipsnavn}</td>
+                  </tr>
+                  <tr tal:condition="obj/skipstype__bruk_|None">
+                    <td>
+                      <b i18n:translate="">Skipstype (bruk)</b>
+                    </td>
+                    <td>${obj/skipstype__bruk_}</td>
+                  </tr>
+                  <tr tal:condition="obj/skipstype|None">
+                    <td>
+                      <b i18n:translate="">Skipstype</b>
+                    </td>
+                    <td>${obj/skipstype}</td>
+                  </tr>
+                  <tr tal:condition="obj/sold|None">
+                    <td>
+                      <b i18n:translate="">sold</b>
+                    </td>
+                    <td>${obj/sold}</td>
+                  </tr>
+                  <tr tal:condition="obj/tdw|None">
+                    <td>
+                      <b i18n:translate="">tdw</b>
+                    </td>
+                    <td>${obj/tdw}</td>
+                  </tr>
+                  <tr tal:condition="obj/tidligere_navn|None">
+                    <td>
+                      <b i18n:translate="">Tidligere navn</b>
+                    </td>
+                    <td>${obj/tidligere_navn}</td>
+                  </tr>
+                  <tr tal:condition="obj/tilgang|None">
+                    <td>
+                      <b i18n:translate="">Tilgang</b>
+                    </td>
+                    <td>${obj/tilgang}</td>
+                  </tr>
+                  <tr tal:condition="obj/to|None">
+                    <td>
+                      <b i18n:translate="">to</b>
+                    </td>
+                    <td>${obj/to}</td>
+                  </tr>
+                  <tr tal:condition="obj/tonnasje|None">
+                    <td>
+                      <b i18n:translate="">Tonnasje</b>
+                    </td>
+                    <td>${obj/tonnasje}</td>
+                  </tr>
+                  <tr tal:condition="obj/utgang|None">
+                    <td>
+                      <b i18n:translate="">Utgang</b>
+                    </td>
+                    <td>${obj/utgang}</td>
+                  </tr>
+                  <tr tal:condition="obj/year|None">
+                    <td>
+                      <b i18n:translate="">År (y)</b>
+                    </td>
+                    <td>${obj/year}</td>
+                  </tr>
+                  <tr tal:condition="obj/yno|None">
+                    <td>
+                      <b i18n:translate="">y no</b>
+                    </td>
+                    <td>${obj/yno}</td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+
+              <div class="divider">&nbsp;</div>
+
+              <div tal:condition="obj/historikk|None">
+                <h3 i18n:translate="">Historikk</h3>
+                <div tal:content="structure obj/historikk/output" />
+              </div>
+
+              <div tal:condition="obj/history|None">
+                <h3 i18n:translate="">History</h3>
+                <div tal:content="structure obj/history/output" />
+              </div>
+
+              <div class="divider">&nbsp;</div>
+
+              <div tal:content="structure obj/text/output" />
+
+            </tal:listing>
+          </tal:results>
+        </metal:listingmacro>
+      </metal:block>
+    </metal:content-core>
+  </body>
+</html>

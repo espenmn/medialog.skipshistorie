@@ -69,15 +69,28 @@
         class=".skip.SkipView"
     />
 
-
     <browser:page
       name="toPDF"
-      for="*"
+      for="plone.app.contenttypes.interfaces.IFolder"
       class=".skip.toPDF"
       permission="zope2.View"
       />
 
-      <browser:page
+    <browser:page
+      name="toPDF"
+      for="*"
+      class=".skip.toPDFF"
+      permission="zope2.View"
+      />
+
+    <browser:page
+      name="toPDF"
+      for="plone.app.contenttypes.interfaces.ICollection"
+      class=".skip.toPDFF"
+      permission="zope2.View"
+      />
+
+    <browser:page
         name="skip-view"
         for="*"
         class=".boat_view.BoatView"

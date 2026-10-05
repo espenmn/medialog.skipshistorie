@@ -45,6 +45,7 @@
 
           <table class="eeece1">
           <tbody  class="eeece1">
+              <tr tal:condition="context/off_nr|None"><td><b i18n:translate="">IMO / off nr </b></td><td>${context/off_nr}</td></tr>
               <tr tal:condition="context/vessel|None"><td><b i18n:translate="">Vessel:</b></td><td> ${context/vessel|None}</td></tr>
               <tr tal:condition="context/idold|None"><td><b class="plonelink" i18n:translate="">Old id:</b></td><td> ${context/idold|None}</td></tr>
 
@@ -77,7 +78,6 @@
               <tr tal:condition="context/manouvering|None"><td><b i18n:translate="">Manouvering</b></td><td>${context/manouvering}</td></tr>
               <tr tal:condition="context/navigasjonsutstyr|None"><td><b i18n:translate="">Navigasjonsutstyr</b></td><td>${context/navigasjonsutstyr}</td></tr>
               <tr tal:condition="context/nrt|None"><td><b i18n:translate="">nrt</b></td><td>${context/nrt}</td></tr>
-              <tr tal:condition="context/off_nr|None"><td><b i18n:translate="">IMO / off nr </b></td><td>${context/off_nr}</td></tr>
               <tr tal:condition="context/owneri|None"><td><b i18n:translate="">Owner I</b></td><td>${context/owneri}</td></tr>
               <tr tal:condition="context/power|None"><td><b i18n:translate="">Power</b></td><td>${context/power}</td></tr>
               <tr tal:condition="context/purch|None"><td><b i18n:translate="">Purch</b></td><td>${context/purch}</td></tr>
