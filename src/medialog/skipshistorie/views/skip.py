@@ -13,6 +13,11 @@ from pdfkit import from_string
 import pdfkit
 
 import os
+import tempfile
+from pypdf import PdfWriter
+
+
+import os
 #import tempfile
 #import zipfile
 
@@ -67,34 +72,57 @@ class toPDF(BrowserView):
             items = self.context.listFolderContents()
         else:
             items = [self.context]
-
+ 
+       
         urls = []
 
         for item in items:
-            # url = item.absolute_url()
+            url = item.absolute_url()
 
-            if item.portal_type in ["Skip", "skip"]:
+            if item.portal_type == "Skip":
                 url = "{}/skip-view".format(url)
 
             urls.append(url)
-   
 
-        ## Need to use 'tempfile for this in case two people downloads at the same time'
-        pdfFile = pdfkit.from_url(urls, "out.pdf")
-        R = self.request.RESPONSE
 
-        #Probably add all the files to a folder and zip it instead
-        #file_path = os.path.join(os.getcwd(), 'out.pdf')
+        # Convert each URL separately
+        writer = PdfWriter()
 
-        with open('out.pdf', 'rb') as f:
-            pdf_data = f.read()
+        for url in urls:
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+                tmp_pdf = tmp.name
 
-        R.setHeader('Content-Type', 'application/pdf')
-        R.setHeader('Content-Disposition', 'inline; filename=out.pdf')
-        R.setHeader("Content-Disposition", "attachment; filename=%s.pdf" % pdfTitle)
-        R.setHeader('Content-Length', len(pdf_data))
+            try:
+                pdfkit.from_url(url, tmp_pdf)
 
-        return pdf_data
-        #return pdfFile
+                # Add this PDF to the final document
+                from pypdf import PdfReader
+                reader = PdfReader(tmp_pdf)
 
+                for page in reader.pages:
+                    writer.add_page(page)
+
+            finally:
+                if os.path.exists(tmp_pdf):
+                    os.unlink(tmp_pdf)
+
+
+        with open("out.pdf", "wb") as f:
+            writer.write(f)
+                    
+      
+        import io
+
+        pdf_data = io.BytesIO()
+        writer.write(pdf_data)
+
+        pdf_data.seek(0)
+
+        self.request.response.setHeader("Content-Type", "application/pdf")
+        self.request.response.setHeader(
+            "Content-Disposition",
+            'inline; filename="out.pdf"'
+        )
+
+        return pdf_data.getvalue()
 
