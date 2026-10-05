@@ -80,7 +80,7 @@ class toPDF(BrowserView):
    
 
         ## Need to use 'tempfile for this in case two people downloads at the same time'
-        pdfFile = pdfkit.from_url(url, "out.pdf")
+        pdfFile = pdfkit.from_url(urls, "out.pdf")
         R = self.request.RESPONSE
 
         #Probably add all the files to a folder and zip it instead
@@ -98,9 +98,3 @@ class toPDF(BrowserView):
         #return pdfFile
 
 
-            
-
-            
-
-        ## Need to use 'tempfile for this in case two people downloads at the same time'
-        pdfFile = pdfkit.from_url(urls, "out.pdf")
