@@ -87,7 +87,7 @@ class MRenderer(base.Renderer):
     def render(self):
         return self._template()
     
-    @property
+    # @property
     def related_kallesignal(self):
         context = self.context
         item_kallesignal = context.kallesignal 
@@ -100,7 +100,7 @@ class MRenderer(base.Renderer):
             if item.getObject() != context
         ]
     
-    @property
+    # @property
     def related_ships(self):
         context = self.context
         item_off_nr = context.off_nr 
