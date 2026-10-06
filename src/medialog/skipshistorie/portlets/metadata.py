@@ -49,6 +49,13 @@ class NAssignment(Assignment):
         Display the name in portlet mngmt interface
         """
         return _("innhold")
+    
+    def related_items(self):
+        context = self.context
+        import pdb; pdb.set_trace()
+        items = []
+        off_nr = context.off_nr 
+        kallesignal = context.kallesignal
 
 
 
