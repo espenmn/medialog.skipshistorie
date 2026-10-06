@@ -199,7 +199,7 @@ msgstr "Tidligere"
 
 #: ../views/boat_view.pt:65
 msgid "grt"
-msgstr "bra"
+msgstr "brt"
 
 #: ../portlets/metadata.py:51
 msgid "innhold"

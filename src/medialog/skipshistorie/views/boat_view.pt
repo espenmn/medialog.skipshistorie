@@ -45,7 +45,9 @@
 
           <table class="eeece1">
           <tbody  class="eeece1">
-                     <tr tal:condition="context/skipsnavn|None"><td><b i18n:translate="">Skipsnavn</b></td><td>${context/skipsnavn}</td></tr>
+                <tr tal:condition="context/skipsnavn|None"><td><b i18n:translate="">Skipsnavn</b></td><td>${context/skipsnavn}</td></tr>
+                <tr tal:condition="context/tidligere_navn|None"><td><b i18n:translate="">Tidligere navn</b></td><td>${context/tidligere_navn}</td></tr>
+                
                 <tr tal:condition="context/off_nr|None"><td><b i18n:translate="">IMO / off nr</b></td><td>${context/off_nr}</td></tr>
                 <tr tal:condition="context/kallesignal|None"><td><b i18n:translate="">Kallesignal</b></td><td>${context/kallesignal}</td></tr>
                 <tr tal:condition="context/flagg|None"><td><b i18n:translate="">Flagg</b></td><td>${context/flagg}</td></tr>
@@ -55,9 +57,12 @@
                 <tr tal:condition="context/shipyard|None"><td><b i18n:translate="">Shipyard</b></td><td>${context/shipyard}</td></tr>
                 <tr tal:condition="context/bnr|None"><td><b i18n:translate="">Bnr (Sno)</b></td><td>${context/bnr}</td></tr>
                 <tr tal:condition="context/konstruksjon|None"><td><b i18n:translate="">Konstruksjon</b></td><td>${context/konstruksjon}</td></tr>
+                <tr tal:condition="context/lasthandtering|None"><td><b i18n:translate="">Lastehandtering</b></td><td>${context/lasthandtering}</td></tr>
                 <tr tal:condition="context/grt|None"><td><b i18n:translate="">grt</b></td><td>${context/grt}</td></tr>
-                <tr tal:condition="context/tdw|None"><td><b i18n:translate="">tdw</b></td><td>${context/tdw}</td></tr>
                 <tr tal:condition="context/brt|None"><td><b i18n:translate="">brt</b></td><td>${context/brt}</td></tr>
+                <tr tal:condition="context/tdw|None"><td><b i18n:translate="">tdw</b></td><td>${context/tdw}</td></tr>
+                <tr tal:condition="context/tonnasje|None"><td><b i18n:translate="">Tonnasje</b></td><td>${context/tonnasje}</td></tr>
+                
                 <tr tal:condition="context/dimensjoner|None"><td><b i18n:translate="">Dimensjoner</b></td><td>${context/dimensjoner}</td></tr>
                 <tr tal:condition="context/fremdrift|None"><td><b i18n:translate="">Fremdrift</b></td><td>${context/fremdrift}</td></tr>
                 <tr tal:condition="context/kjeler|None"><td><b i18n:translate="">Kjeler</b></td><td>${context/kjeler}</td></tr>
@@ -80,22 +85,20 @@
                 <tr tal:condition="context/idnew|None"><td><b i18n:translate="">ID new</b></td><td>${context/idnew}</td></tr>
                 <tr tal:condition="context/kjop|None"><td><b i18n:translate="">kjop</b></td><td>${context/kjop}</td></tr>
                 <tr tal:condition="context/kommunikasjon|None"><td><b i18n:translate="">Kommunikasjon</b></td><td>${context/kommunikasjon}</td></tr>
-                <tr tal:condition="context/lasthandtering|None"><td><b i18n:translate="">Lastehandtering</b></td><td>${context/lasthandtering}</td></tr>
                 <tr tal:condition="context/manouvering|None"><td><b i18n:translate="">Manouvering</b></td><td>${context/manouvering}</td></tr>
                 <tr tal:condition="context/navigasjonsutstyr|None"><td><b i18n:translate="">Navigasjonsutstyr</b></td><td>${context/navigasjonsutstyr}</td></tr>
-                <tr tal:condition="context/nrt|None"><td><b i18n:translate="">nrt</b></td><td>${context/nrt}</td></tr>
                 <tr tal:condition="context/owneri|None"><td><b i18n:translate="">Owner I</b></td><td>${context/owneri}</td></tr>
                 <tr tal:condition="context/purch|None"><td><b i18n:translate="">Purch</b></td><td>${context/purch}</td></tr>
                 <tr tal:condition="context/rederinummer|None"><td><b i18n:translate="">Rederinummer</b></td><td>${context/rederinummer}</td></tr>
                 <tr tal:condition="context/senerenorsk|None"><td><b i18n:translate="">Senere Norsk</b></td><td>${context/senerenorsk}</td></tr>
                 <tr tal:condition="context/skipstype__bruk_|None"><td><b i18n:translate="">Skipstype (bruk)</b></td><td>${context/skipstype__bruk_}</td></tr>
                 <tr tal:condition="context/sold|None"><td><b i18n:translate="">sold</b></td><td>${context/sold}</td></tr>
-                <tr tal:condition="context/tidligere_navn|None"><td><b i18n:translate="">Tidligere navn</b></td><td>${context/tidligere_navn}</td></tr>
                 <tr tal:condition="context/to|None"><td><b i18n:translate="">to</b></td><td>${context/to}</td></tr>
-                <tr tal:condition="context/tonnasje|None"><td><b i18n:translate="">Tonnasje</b></td><td>${context/tonnasje}</td></tr>
                 <tr tal:condition="context/utgang|None"><td><b i18n:translate="">Utgang</b></td><td>${context/utgang}</td></tr>
                 <tr tal:condition="context/year|None"><td><b i18n:translate="">År (y)</b></td><td>${context/year}</td></tr>
                 <tr tal:condition="context/yno|None"><td><b i18n:translate="">y no</b></td><td>${context/yno}</td></tr>
+                <tr tal:condition="context/nrt|None"><td><b i18n:translate="">nrt</b></td><td>${context/nrt}</td></tr>
+                
 
           </tbody>
          </table>
