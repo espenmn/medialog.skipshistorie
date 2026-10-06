@@ -13,7 +13,7 @@
               <figure class="boatImageContainer"
                       tal:define="teaser_image python:getattr(context.aq_explicit, 'related_image', False) and context.related_image.to_object;
                              scale_func teaser_image/@@images;
-                             scaled_image python:teaser_image and scale_func.scale('image', scale='full')"
+                             scaled_image python:teaser_image and scale_func.scale('image', scale='halvfull')"
                       tal:condition="python: teaser_image">
 
 
@@ -24,12 +24,10 @@
               </figure>
             </div>
 
-
             <table class="eeece1">
             <tbody  class="eeece1">
                  <tr tal:condition="context/skipsnavn|None"><td><b i18n:translate="">Skipsnavn</b></td><td>${context/skipsnavn}</td></tr>
                 <tr tal:condition="context/tidligere_navn|None"><td><b i18n:translate="">Tidligere navn</b></td><td>${context/tidligere_navn}</td></tr>
-                
                 <tr tal:condition="context/off_nr|None"><td><b i18n:translate="">IMO / off nr</b></td><td>${context/off_nr}</td></tr>
                 <tr tal:condition="context/kallesignal|None"><td><b i18n:translate="">Kallesignal</b></td><td>${context/kallesignal}</td></tr>
                 <tr tal:condition="context/flagg|None"><td><b i18n:translate="">Flagg</b></td><td>${context/flagg}</td></tr>
