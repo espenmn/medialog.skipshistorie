@@ -73,6 +73,8 @@ class toPDF(BrowserView):
         urls = []
 
         for item in items:
+            
+
             if item.portal_type in ["Skip", "skip"]:
                 url = "{}/skip-view".format(item.absolute_url())
 
