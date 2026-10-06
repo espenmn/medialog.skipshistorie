@@ -9,7 +9,7 @@
 <aside class="portlet portletMetadata">
   <header class="portletHeader"><span>Teknisk info</span></header>
       <p>
-      <span tal:repeat="ship view/related_items">
+      <span tal:repeat="ship view/related_ships">
         ${ship/Title}
       </span>
       <ul>

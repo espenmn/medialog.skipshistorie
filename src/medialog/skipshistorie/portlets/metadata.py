@@ -52,14 +52,6 @@ class NAssignment(Assignment):
         """
         return _("innhold")
     
-    def related_items(self):
-        context = self.context
-        # items = []
-        item_off_nr = context.off_nr 
-        # kallesignal = context.kallesignal
-        documents = api.content.find(off_nr=item_off_nr)
-        return documents
-
 
 
 class IMetadataPortlet(IPortletDataProvider):
@@ -94,6 +86,17 @@ class MRenderer(base.Renderer):
 
     def render(self):
         return self._template()
+    
+    @property
+    def related_ships(self):
+        context = self.context
+        # items = []
+        item_off_nr = context.off_nr 
+        # kallesignal = context.kallesignal
+        documents = api.content.find(off_nr=item_off_nr)
+        return documents
+
+
 
     @property
     def available(self):
