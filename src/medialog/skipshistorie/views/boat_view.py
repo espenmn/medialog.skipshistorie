@@ -21,3 +21,16 @@ class BoatView(BrowserView):
     def __call__(self):
         # Implement your own actions:
         return self.index()
+
+
+    def related_content(self):
+        # Implement your own actions:
+        # If IMO number
+        # look up other ships with same
+        # if kallesignal
+        # find other ships with same kallesignal
+        # If id x
+        # ind
+        # if id y
+        # find
+        
