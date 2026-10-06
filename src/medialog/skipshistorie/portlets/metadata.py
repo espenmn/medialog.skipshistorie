@@ -88,13 +88,26 @@ class MRenderer(base.Renderer):
         return self._template()
     
     @property
+    def related_kallesignal(self):
+        context = self.context
+        item_kallesignal = context.kallesignal 
+        documents = api.content.find(off_nr=item_kallesignal)
+        
+        return [
+            item for item in documents
+            if item.getObject() != context
+        ]
+    
+    @property
     def related_ships(self):
         context = self.context
-        # items = []
         item_off_nr = context.off_nr 
-        # kallesignal = context.kallesignal
         documents = api.content.find(off_nr=item_off_nr)
-        return documents
+        
+        return [
+            item for item in documents
+            if item.getObject() != context
+        ]
 
 
 
