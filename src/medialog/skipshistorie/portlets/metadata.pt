@@ -9,7 +9,9 @@
 <aside class="portlet portletMetadata">
   <header class="portletHeader"><span>Teknisk info</span></header>
       <p>
-      ${view/related_items}
+      <span tal:repeat="ship view/related_items">
+        ${ship/Title}
+      </span>
       <ul>
         <li tal:condition="context/off_nr|None"><b>IMO: </b>${context/off_nr|None}</li>
         <li tal:condition="context/flagg|None"><b>Flagg: </b>${context/flagg|None}</li>

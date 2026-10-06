@@ -15,6 +15,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
 from zope.interface import implementer
 from zope.interface import Interface
+from plone import api
+
 
 
 #import json
@@ -52,10 +54,11 @@ class NAssignment(Assignment):
     
     def related_items(self):
         context = self.context
-        import pdb; pdb.set_trace()
-        items = []
-        off_nr = context.off_nr 
-        kallesignal = context.kallesignal
+        # items = []
+        item_off_nr = context.off_nr 
+        # kallesignal = context.kallesignal
+        documents = api.content.find(off_nr=item_off_nr)
+        return documents
 
 
 
