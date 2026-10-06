@@ -11,9 +11,6 @@ from jinja2 import Environment
 from jinja2 import FileSystemLoader
 from pdfkit import from_string
 import pdfkit
-
-
-
 import os
 import tempfile
 import zipfile
@@ -22,8 +19,6 @@ import zipfile
 
 class ISkipView(Interface):
     """ Marker Interface for IBoatView"""
-
-
 
 
 
@@ -77,11 +72,13 @@ class toPDF(BrowserView):
                     for item in items:
                         if item.portal_type in ["Skip", "skip"]:
                             url = "{}/skip-view".format(item.absolute_url())
-                            title = item.id
+                            tittel = item.id
+                            
+                            import pdb; pdb.set_trace()
                     
                             pdf_path = os.path.join(
                                 temp_dir,
-                                "{}.pdf".format(title)
+                                "{}.pdf".format(tittel)
                             )
 
                             # Create PDF
@@ -90,7 +87,7 @@ class toPDF(BrowserView):
                             # Add PDF to ZIP
                             zip_file.write(
                                 pdf_path,
-                                arcname="{}.pdf".format(title)
+                                arcname="{}.pdf".format(tittel)
                             )
 
                 # Read completed ZIP before TemporaryDirectory disappears
