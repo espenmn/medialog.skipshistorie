@@ -69,15 +69,11 @@ class toPDF(BrowserView):
             items = self.context.listFolderContents()
         else:
             items = [self.context]
-
         
 
         with tempfile.TemporaryDirectory() as temp_dir:
-
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
-
-                with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:
-                    
+                with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:                    
                     for item in items:
                         if item.portal_type in ["Skip", "skip"]:
                             url = "{}/skip-view".format(item.absolute_url())
