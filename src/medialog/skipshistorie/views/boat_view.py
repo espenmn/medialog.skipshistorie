@@ -23,7 +23,7 @@ class BoatView(BrowserView):
         return self.index()
 
 
-    def related_content(self, context):
+    #def related_content(self, context):
         # Implement your own actions:
         # If IMO number
         # look up other ships with same

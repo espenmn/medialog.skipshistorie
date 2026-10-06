@@ -70,17 +70,6 @@ class toPDF(BrowserView):
         else:
             items = [self.context]
 
-        urls = []
-
-        for item in items:
-            
-
-            if item.portal_type in ["Skip", "skip"]:
-                url = "{}/skip-view".format(item.absolute_url())
-
-                urls.append(url)
-   
-
         
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -88,22 +77,24 @@ class toPDF(BrowserView):
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
 
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:
+                    
+                    for item in items:
+                        if item.portal_type in ["Skip", "skip"]:
+                            url = "{}/skip-view".format(item.absolute_url())
+                    
+                            pdf_path = os.path.join(
+                                temp_dir,
+                                "{}.pdf".format(item.Title())
+                            )
 
-                    for index, url in enumerate(urls, 1):
+                            # Create PDF
+                            pdfkit.from_url(url, pdf_path)
 
-                        pdf_path = os.path.join(
-                            temp_dir,
-                            "document-{}.pdf".format(index)
-                        )
-
-                        # Create PDF
-                        pdfkit.from_url(url, pdf_path)
-
-                        # Add PDF to ZIP
-                        zip_file.write(
-                            pdf_path,
-                            arcname="document-{}.pdf".format(index)
-                        )
+                            # Add PDF to ZIP
+                            zip_file.write(
+                                pdf_path,
+                                arcname="{}.pdf".format(item.Title())
+                            )
 
                 # Read completed ZIP before TemporaryDirectory disappears
                 with open(zip_path, "rb") as f:
