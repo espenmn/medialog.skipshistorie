@@ -77,10 +77,11 @@ class toPDF(BrowserView):
                     for item in items:
                         if item.portal_type in ["Skip", "skip"]:
                             url = "{}/skip-view".format(item.absolute_url())
+                            title = item.id
                     
                             pdf_path = os.path.join(
                                 temp_dir,
-                                "{}.pdf".format(item.Title())
+                                "{}.pdf".format(title)
                             )
 
                             # Create PDF
@@ -89,7 +90,7 @@ class toPDF(BrowserView):
                             # Add PDF to ZIP
                             zip_file.write(
                                 pdf_path,
-                                arcname="{}.pdf".format(item.Title())
+                                arcname="{}.pdf".format(title)
                             )
 
                 # Read completed ZIP before TemporaryDirectory disappears
