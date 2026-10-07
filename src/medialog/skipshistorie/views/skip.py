@@ -82,8 +82,6 @@ class toPDF(BrowserView):
                             url = "{}/skip-view".format(item.getURL())
                             tittel = item.id
                             
-                            # import pdb; pdb.set_trace()
-                    
                             pdf_path = os.path.join(
                                 temp_dir,
                                 "{}.pdf".format(tittel)
