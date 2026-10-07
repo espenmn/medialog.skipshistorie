@@ -59,14 +59,17 @@ class toPDF(BrowserView):
         context = self.context
         portal_type = context.portal_type
         pdfTitle = self.context.title + '.pdf'
+        items = 0
         
         if portal_type in ["Folder", "Collection"]:
             items = self.context.listFolderContents()
         else:
             items = [self.context]
         
+        R = self.request.RESPONSE
 
-        with tempfile.TemporaryDirectory() as temp_dir:
+        if len(items) > 1:
+            with tempfile.TemporaryDirectory() as temp_dir:
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:                    
                     for item in items:
@@ -95,15 +98,30 @@ class toPDF(BrowserView):
                     zip_data = f.read()
 
 
-        R = self.request.RESPONSE
+        
+            R.setHeader("Content-Type", "application/zip")
+            R.setHeader(
+                    "Content-Disposition",
+                    'attachment; filename="{}.zip"'.format(pdfTitle)
+            )
+            R.setHeader("Content-Length", len(zip_data))
 
-        R.setHeader("Content-Type", "application/zip")
-        R.setHeader(
-                "Content-Disposition",
-                'attachment; filename="{}.zip"'.format(pdfTitle)
-        )
-        R.setHeader("Content-Length", len(zip_data))
-
-        return zip_data
+            return zip_data
 
 
+        if len(items) == 1:
+            pdfFile = pdfkit.from_url(items[0], "out.pdf")
+            R = self.request.RESPONSE
+
+            with open('out.pdf', 'rb') as f:
+                pdf_data = f.read()
+
+            R.setHeader('Content-Type', 'application/pdf')
+            R.setHeader('Content-Disposition', 'inline; filename=out.pdf')
+            R.setHeader("Content-Disposition", "attachment; filename=%s.pdf" % pdfTitle)
+            R.setHeader('Content-Length', len(pdf_data))
+
+            return pdf_data
+        
+        return "No ships found"
+        
