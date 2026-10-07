@@ -14,6 +14,7 @@ import pdfkit
 import os
 import tempfile
 import zipfile
+from plone import api
 
 
 
@@ -59,10 +60,15 @@ class toPDF(BrowserView):
         context = self.context
         portal_type = context.portal_type
         pdfTitle = self.context.title + '.pdf'
-        items = 0
+        items = []
         
         if portal_type in ["Folder", "Collection"]:
-            items = self.context.listFolderContents()
+            # items = self.context.listFolderContents()
+            # or we could pass 'depth'
+            items = api.content.find(
+                context=self.context,
+                depth=-1
+            )
         else:
             items = [self.context]
         
@@ -110,7 +116,6 @@ class toPDF(BrowserView):
 
 
         if len(items) == 1:
-            import pdb; pdb.set_trace()
             url = "{}/skip-view".format(items[0].absolute_url())
             pdfFile = pdfkit.from_url(url, "out.pdf")
             
