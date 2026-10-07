@@ -80,7 +80,7 @@ class toPDF(BrowserView):
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:                    
                     for item in items:
-                            # if item.portal_type in ["Skip", "skip"]:
+                        if item.portal_type in ["Skip", "skip"]:
                             url = "{}/skip-view".format(item.absolute_url())
                             tittel = item.id
                             
