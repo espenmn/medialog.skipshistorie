@@ -111,9 +111,9 @@ class toPDF(BrowserView):
 
         if len(items) == 1:
             import pdb; pdb.set_trace()
-            pdfFile = pdfkit.from_url(items[0], "out.pdf")
-            R = self.request.RESPONSE
-
+            url = "{}/skip-view".format(items[0].absolute_url())
+            pdfFile = pdfkit.from_url(url, "out.pdf")
+            
             with open('out.pdf', 'rb') as f:
                 pdf_data = f.read()
 
