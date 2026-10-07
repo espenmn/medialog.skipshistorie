@@ -66,8 +66,7 @@ class toPDF(BrowserView):
             # items = self.context.listFolderContents()
             # or we could pass 'depth'
             items = api.content.find(
-                context=self.context,
-                depth=-1
+                context=self.context
             )
         else:
             items = [self.context]
