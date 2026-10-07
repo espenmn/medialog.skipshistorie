@@ -132,7 +132,7 @@
      </table>
     </div>
     <p>&nbsp;</p>
-      <div class="boatLeadImage" tal:condition="context/related_image">
+      <div class="boatLeadImage" tal:condition="python:  context.related_image">
         <figure class="boatImageContainer"
                 tal:define="teaser_image python:getattr(context.aq_explicit, 'related_image', False) and context.related_image.to_object;
                        scale_func teaser_image/@@images;
