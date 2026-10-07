@@ -66,7 +66,9 @@ class toPDF(BrowserView):
             # items = self.context.listFolderContents()
             # or we could pass 'depth'
             items = api.content.find(
-                context=self.context
+                context=self.context,
+                portal_type="skip",
+                depth=20
             )
         else:
             items = [self.context]
@@ -78,7 +80,7 @@ class toPDF(BrowserView):
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:                    
                     for item in items:
-                        if item.portal_type in ["Skip", "skip"]:
+                            # if item.portal_type in ["Skip", "skip"]:
                             url = "{}/skip-view".format(item.absolute_url())
                             tittel = item.id
                             
