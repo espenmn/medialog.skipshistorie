@@ -22,7 +22,7 @@ brains = app.skipshistorie.portal_catalog(id="ltk00119640300000-fernland")
 
 #brains = app.skipshistorie.portal_catalog(id="ukj10118911000000-spero")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -44,14 +44,14 @@ if brains:
 				if '- ' in obj.Title():
 					print('12k34')
 					abd = 1234
-					#import pdb; pdb.set_trace()
+					
 			except TypeError:
-				#import pdb; pdb.set_trace()
+				
 				obj.Title = obj.Title()
 
 			#print(obj.absolute_url().replace("http://nohost/skipshistorie/", "http://skipshistorie.lokalhistorie.org/"))
 			primary_field = IPrimaryFieldInfo(obj)
-			#import pdb; pdb.set_trace()
+			
 			if isinstance(primary_field.field, RichText):
 					if obj.text:
 						oldtext = obj.text.output
@@ -756,7 +756,7 @@ if brains:
 
 						]
 
-						#import pdb; pdb.set_trace()
+						
 						changed = 0
 
 						if obj.portal_type == 'Document' and hasattr(obj,'havn'):
@@ -765,14 +765,14 @@ if brains:
 
 
 						for entry in findText:
-							#import pdb; pdb.set_trace()
+							
 							#print(entry)
 							if hasattr(obj, entry[0]) and not getattr(obj, entry[0]) :
 								print('empty field')
 								findField = soup.find(text=entry[1])
 
 								if findField:
-									#import pdb; pdb.set_trace()
+									
 									#print('setting field')
 									changed = 1
 									#print(entry[0])
@@ -782,7 +782,7 @@ if brains:
 									the_td['class'] = 'scraped'
 
 									#if getattr(obj, entry[0]):
-									#import pdb; pdb.set_trace()
+									
 									if len(str(getattr(obj, entry[0])))<=2:
 											#try:
 											value = findField.find_parent('td').find_next('td').text
@@ -823,7 +823,7 @@ if brains:
 
 
 		except KeyError as ke:
-			#import pdb; pdb.set_trace()
+			
 			my_id  = brain.id
 			print('eroor ke')
 

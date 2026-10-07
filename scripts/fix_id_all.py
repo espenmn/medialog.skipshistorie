@@ -24,7 +24,7 @@ if brains:
     ant = 0
     for brain in reversed(brains):
         #print(brain.id)
-        #import pdb; pdb.set_trace()
+       
         #print('lets go')
         
         
@@ -45,14 +45,14 @@ if brains:
              	#obj.id = brain.id; 
              	#nid = brain.id + '-1';  
              	#api.content.rename(obj=obj, new_id=nid)
-             	#import pdb; pdb.set_trace()
+             	
              	ant+=1
         
              except ValueError: 
              	print("value error" + brain.portal_type)
              	ant+=1
         
-                #import pdb; pdb.set_trace()
+               
                 #api.content.rename(obj=brain.getObject, new_id=ide, safe_id=True)
              	
              	#obj.id = ide

@@ -23,7 +23,7 @@ a = 0
 #if brains:
 for brain in  brains:
     #print('-')
-    #import pdb; pdb.set_trace()
+   
     a +=1
     obj = brain.getObject()
     skipstype = obj.skipstype__bruk_

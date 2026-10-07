@@ -33,7 +33,7 @@ brains = app.skipshistorie.portal_catalog(portal_type="skip",  sort_on="modified
 #initids = getUtility(IIntIds)
 #brains = app.skipshistorie.portal_catalog(id="fre55319630100000-bjornvik")
 
-#import pdb; pdb.set_trace()
+
 
 if brains:
 	print('Total  objects counted: ')
@@ -59,7 +59,7 @@ if brains:
 				if len(image) > 1:
 					import pdb; pdb.set_trace()
 				img_link = image['src']
-				#import pdb; pdb.set_trace()
+				
 
 				if img_link and  'resolveuid'  in img_link:
 					#print(obj.Title())

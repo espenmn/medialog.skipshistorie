@@ -77,7 +77,7 @@ if brains:
 
 
 		except TypeError:
-				#import pdb; pdb.set_trace()
+				
 				#transaction.commit()
 				print('type error')
 				print(reflink)
@@ -98,7 +98,7 @@ if brains:
 				print('attribute eror')
 
 				print(ref)
-				#import pdb; pdb.set_trace()
+				
 				aaa = 1
 
 transaction.commit()

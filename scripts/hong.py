@@ -21,7 +21,7 @@ setSite(app['skipshistorie'])
 #brains = plone.api.content.find(depth=2)
 brains = app.skipshistorie.portal_catalog()
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -40,7 +40,7 @@ if brains:
 				a = 1
 
 			except KeyError as ke:
-				#import pdb; pdb.set_trace()
+				
 				#print(ke)
 				print(brain.getPath())
 				mykeys.add(ke.args[0])

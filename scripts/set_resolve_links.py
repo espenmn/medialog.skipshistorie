@@ -80,7 +80,7 @@ if brains:
 					ref = ref.replace("%C3%B8", "o").replace("htm", "")
 
 				if ref and 'file' in ref:
-					#import pdb; pdb.set_trace()
+					
 					folder_parts = ref.split("/")
 					indeks = None
 					if 'skipshistorie' in folder_parts:
@@ -92,7 +92,7 @@ if brains:
 
 				if ref and not 'resolveuid' in ref and not 'http' in ref and not 'file' in ref and not 'mailto' in ref:
 					#folder_path = '/'.join(obj.aq_parent.aq_parent.aq_parent.getPhysicalPath())
-					#import pdb; pdb.set_trace()
+					
 					url =  obj.absolute_url().split("/")
 					folder_path = '/' +  '/'.join(url[3:-2]) + "/" + ref
 					#folder_path = folder_path.replace("../", "").replace("--", "-").replace("-.", ".").replace("..", ".")
@@ -118,7 +118,7 @@ if brains:
 
 				found_items = None
 				try:
-					#import pdb; pdb.set_trace()
+					
 					if folder_path:
 
 						found_items = plone.api.content.get(path=folder_path)
@@ -198,7 +198,7 @@ if brains:
 
 
 		except TypeError:
-			#import pdb; pdb.set_trace()
+			
 			#transaction.commit()
 			print('type error')
 			print(reflink)
@@ -218,7 +218,7 @@ if brains:
 			print('attribute eror')
 
 			print(ref)
-			#import pdb; pdb.set_trace()
+			
 			aaa = 1
 
 

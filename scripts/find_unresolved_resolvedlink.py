@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="lagt-ut-i-2015")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -50,13 +50,13 @@ if brains:
 						lenketext = lenke['href']
 						changed = 1
 						if " for" in lenketext:
-							#import pdb; pdb.set_trace()
+							
 							print(lenke['href'])
 							print(obj.absolute_url)
 
 						if not 'resolve' in lenketext:
 							if not'http' in lenketext:
-								#import pdb; pdb.set_trace()
+								
 								#print(lenke['href'])
 								abc = 1
 
@@ -68,7 +68,7 @@ if brains:
 							lenke['href'] = lenke['href'].replace("resolveuid/&lt;bound method DexterityContent.UID of Image at ", "").replace("&gt;&gt", "").replace("skipshistorie/", "")
 							lenke['href'] = lenke['href'].replace("resolveuid/<bound method DexterityContent.UID of <Image at ","").replace(">>", "").replace("skipshistorie/", "")
 							if "UID" in lenke['href']:
-								#import pdb; pdb.set_trace()
+								
 								print(lenke['href'])
 								print(obj.absolute_url)
 					except KeyError:

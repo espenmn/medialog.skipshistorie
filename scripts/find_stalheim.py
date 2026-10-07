@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(id="osl36919500100000-stalheim")
 #brains = app.skipshistorie.portal_catalog(id="fre54119730200000-cape-york")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -35,9 +35,9 @@ if brains:
 				if '- ' in obj.Title():
 					print('12k34')
 					abd = 1234
-					#import pdb; pdb.set_trace()
+					
 			except TypeError:
-				#import pdb; pdb.set_trace()
+				
 				obj.Title = obj.Title()
 
 			print(obj.absolute_url().replace("http://nohost/skipshistorie/", "http://skipshistorie.lokalhistorie.org/"))
@@ -193,11 +193,11 @@ if brains:
 
 
 						for entry in findText:
-							#import pdb; pdb.set_trace()
+							
 							findField = soup.find(text=entry[1])
 
 							if findField:
-									#import pdb; pdb.set_trace()
+									
 									#print('setting field')
 									#print(entry[0])
 									the_td = findField.find_parent('td')
@@ -206,7 +206,7 @@ if brains:
 									the_td['class'] = 'scraped'
 
 									#if getattr(obj, entry[0]):
-									#import pdb; pdb.set_trace()
+									
 									if len(str(getattr(obj, entry[0])))>=2:
 											#try:
 											value = findField.find_parent('td').find_next('td').text
@@ -215,11 +215,11 @@ if brains:
 
 											#except AttributeError:
 											#abv = "123"
-											#import pdb; pdb.set_trace()
+											
 											#print(obj.Title())
 											#except ValueError:
 											#abv = "123"
-											#import pdb; pdb.set_trace()
+											
 											#	print(obj.Title())
 
 						# Find all <td> tags that contain an <img> tag
@@ -249,7 +249,7 @@ if brains:
 
 
 		except KeyError as ke:
-			#import pdb; pdb.set_trace()
+			
 			my_id  = brain.id
 			print('eroor ke')
 

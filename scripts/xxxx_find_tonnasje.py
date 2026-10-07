@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document")
 #brains = app.skipshistorie.portal_catalog(id="osl48219450100000-finnes")
 
-     #import pdb; pdb.set_trace()
+    
 
 if brains:
      print('Total  objects: ')
@@ -50,22 +50,22 @@ if brains:
                      ]
 
                      for entry in findText:
-                         #import pdb; pdb.set_trace()
+                        
                          findField = soup.find(text=entry[1])
 
                          if findField:
                              try:
                                 value = findField.find_parent('td').find_next('td').text
                                 if len(value) >= 3:
-                                    #import pdb; pdb.set_trace()
+                                   
                                     setattr(obj, entry[0], value)
 
 
                              except AttributeError:
-                                 #import pdb; pdb.set_trace()
+                                
                                  print(obj.Title())
                              except ValueError:
-                                 #import pdb; pdb.set_trace()
+                                
                                  print(obj.Title())
 
 

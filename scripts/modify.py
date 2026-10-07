@@ -41,7 +41,7 @@ if brains:
 	#for index, brain in enumerate(brains):
 	for brain in  brains:
 		obj = brain.getObject()
-		#import pdb; pdb.set_trace()
+		
 		
 		obj.konstruksjon = str(obj.konstruksjon)
 		obj.skipstype__bruk_ = str(obj.skipstype__bruk_)

@@ -41,11 +41,11 @@ if brains:
 	#for index, brain in enumerate(brains):
 	for brain in  brains:
 		obj = brain.getObject()
-		#import pdb; pdb.set_trace()
+		
 
 		if not "Rederi" in brain.Subject:
 			
-			#import pdb; pdb.set_trace()
+			
 			obj.portal_type="Folder"
 			brain.portal_type="Folder"
 			modified(obj)

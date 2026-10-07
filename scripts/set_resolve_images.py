@@ -64,7 +64,7 @@ if brains:
 					folder_path = folder_path.replace("tekster/bilder", "bilder")
 					#indeks = folder_path.find(".jpg") 
 					#folder_path = folder_path[:indeks+4]   
-					#import pdb; pdb.set_trace()
+					
 					index = folder_path.find("//skipshisto")
 					
 					folder_path = folder_path[index+1:]	                                                            

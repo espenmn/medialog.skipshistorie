@@ -21,7 +21,7 @@ setSite(app['skipshistorie'])
 #brains = plone.api.content.find(depth=2)
 brains = app.skipshistorie.portal_catalog(id="hong kong")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')

@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="osl32419320100000-torlak")
 
-#import pdb; pdb.set_trace()
+
 
 if brains:
 	print('Total  objects: ')
@@ -31,7 +31,7 @@ if brains:
 	for brain in brains:
 		count += 1
 		obj = brain.getObject()
-		#import pdb; pdb.set_trace()
+		
 		hist_type= type(obj.historikk)
 
 

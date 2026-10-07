@@ -71,7 +71,7 @@ if brains:
 
 					found_items = None
 					try:
-						#import pdb; pdb.set_trace()
+						
 						found_items = plone.api.content.get(path=folder_path)
 						#print('found it')
 

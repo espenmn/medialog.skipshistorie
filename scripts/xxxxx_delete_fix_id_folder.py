@@ -15,7 +15,7 @@ import transaction
 setSite(app['skipshistorie'])
 
 brains = app.skipshistorie.portal_catalog(portal_type="Folder")
-    #import pdb; pdb.set_trace()
+   
 
 if brains:
     print('Total  objects: ')
@@ -42,7 +42,7 @@ if brains:
 
 
 
-        #import pdb; pdb.set_trace()
+       
         if '%20' in obj.id:
             id = obj.id
             print(id)

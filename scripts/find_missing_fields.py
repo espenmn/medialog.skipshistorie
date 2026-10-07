@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="tbg10119480300000-baleine")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -31,7 +31,7 @@ if brains:
 	for brain in brains:
 			obj = brain.getObject()
 			
-			#import pdb; pdb.set_trace()
+			
 			primary_field = IPrimaryFieldInfo(obj)
 			if isinstance(primary_field.field, RichText):
 				if obj.text:
@@ -55,7 +55,7 @@ if brains:
 									parenttr = findField.find_parent('tr')
 									if findField.text:
 										if len(findText) >=3 and len(findText) < 50:
-											#import pdb; pdb.set_trace()
+											
 										
 											try:
 												if not (parenttr['class'] and 'tr-empty'  in parenttr['class'] ) :

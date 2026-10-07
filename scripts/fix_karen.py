@@ -39,12 +39,12 @@ if brains:
 	xxx = 0
 	for brain in  brains:
 			obj = None
-			#import pdb; pdb.set_trace()
+			
 			#try:
 			# Use regular expressions to find the index of the last number in the string
 			obj = brain.getObject()
 			#print(cf.f_lineno)
-			#import pdb; pdb.set_trace()
+			
 			
 			try:
 				delattr(obj, "Title") 
@@ -66,7 +66,7 @@ if brains:
 			else:
 				ant+=1
 				print(cf.f_lineno)
-				#import pdb; pdb.set_trace()
+				
 				#obj.title = obj.Title()
 				#obj.Title = obj.Title()
 				tit = obj.title.replace("-1", "")

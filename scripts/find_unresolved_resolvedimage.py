@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="aac660turbinergenerelt1930")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -46,7 +46,6 @@ if brains:
 				for bilde in bilder:
 					billedtext = bilde['src']
 					if 'DexterityContent.UID' in billedtext:
-						#mport pdb; pdb.set_trace()
 						bilde['src'] = bilde['src'].replace("resolveuid/<bound method DexterityContent.UID of <Image at ", "").replace(">>", "")
 						print( obj.absolute_url().replace("http://nohost/skipshistorie", "http://skipshistorie.lokalhistorie.org") )
 

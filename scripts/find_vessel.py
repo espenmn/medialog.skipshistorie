@@ -24,7 +24,7 @@ folders = app.skipshistorie.portal_catalog(portal_type="Folder", sort_on="modifi
 for folder in folders:
 
 
-	#import pdb; pdb.set_trace()
+	
 
 	rederinummer = folder.getObject().rederinummer
 
@@ -43,18 +43,18 @@ for folder in folders:
 							oldtext = obj.text.raw
 							soup = BeautifulSoup(oldtext, 'html.parser')
 
-							#import pdb; pdb.set_trace()
+							
 							#look_for = '(' + rederinummer
 
 							for elem in soup(text=re.compile(r'\(' + rederinummer)):
-								#import pdb; pdb.set_trace()
+								
 								words = elem.strip().split(' ')
 								#tittel = words[1] + ' '.join(words[2:-2]).title().replace("  ", " ")
 								#obj.setTititle(tittel)
 								#tittel = tittel.replace(" ", "")
 								#obj.year = int(words[0])
 								obj.vessel = words[-1].replace("(", "").replace(")", "")
-								#import pdb; pdb.set_trace()
+								
 								print(obj.vessel)
 								#text_element = elem.find_parent('tr')
 								#text_element['class'] = 'scraped'

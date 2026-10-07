@@ -59,7 +59,7 @@ if brains:
 
 
 			for reflink in soup.find_all('a'):
-				#import pdb; pdb.set_trace()
+				
 
 				ref = reflink['href']
 
@@ -79,7 +79,7 @@ if brains:
 
 					if not found_items:
 						found_imgs = api.content.find(portal_type="Image")
-						#import pdb; pdb.set_trace()
+						
 
 						for imges in found_imgs:
 							if imges.id[:17] == folder_path[:17]:
@@ -112,7 +112,7 @@ if brains:
 
 
 		except TypeError:
-			#import pdb; pdb.set_trace()
+			
 			#transaction.commit()
 			print('type error')
 			print(reflink)
@@ -133,7 +133,7 @@ if brains:
 
 			#print(brain.getPath())
 			print(id)
-			#import pdb; pdb.set_trace()
+			
 			aaa = 1
 
 

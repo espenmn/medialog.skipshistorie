@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="brg54119150100000-breim")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -35,9 +35,9 @@ if brains:
 				if '- ' in obj.Title():
 					print('12k34')
 					abd = 1234
-					#import pdb; pdb.set_trace()
+					
 			except TypeError:
-				#import pdb; pdb.set_trace()
+				
 				obj.Title = obj.Title()
 			print(obj.absolute_url())
 			primary_field = IPrimaryFieldInfo(obj)
@@ -188,11 +188,11 @@ if brains:
 						]
 
 						for entry in findText:
-							#import pdb; pdb.set_trace()
+							
 							findField = soup.find(text=entry[1])
 
 							if findField:
-								#import pdb; pdb.set_trace()
+								
 								print('setting field')
 								print(entry[0])
 								the_td = findField.find_parent('td')
@@ -206,17 +206,17 @@ if brains:
 
 
 										if len(value) >= 2:
-											#import pdb; pdb.set_trace()
+											
 											setattr(obj, entry[0], value)
 
 
 									except AttributeError:
 										abv = "123"
-										#import pdb; pdb.set_trace()
+										
 										#print(obj.Title())
 									except ValueError:
 										abv = "123"
-										#import pdb; pdb.set_trace()
+										
 										#	print(obj.Title())
 
 						obj.text = RichTextValue(str(soup))
@@ -228,7 +228,7 @@ if brains:
 
 
 		except KeyError as ke:
-			#import pdb; pdb.set_trace()
+			
 			my_id  = brain.id
 
 			print(ke)

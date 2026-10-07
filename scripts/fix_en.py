@@ -27,7 +27,7 @@ if brains:
         if  "." in brain.id:
             print(brain.id)
             try:
-                #import pdb; pdb.set_trace()
+               
                 obj = brain.getObject()
             
                 

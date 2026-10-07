@@ -44,20 +44,20 @@ if brains:
 		rederinummer = obj.rederinummer
 
 		if rederinummer and rederinummer !='':
-			#import pdb; pdb.set_trace()
+			
 			image_brains  = plone.api.content.find(obj, portal_type="Image", depth=1)
 			#UID=image_uid)[0]
 			#obj.portal_type="rederi"
 			#brain.portal_type="rederi"
 			#print('one')
 
-			#import pdb; pdb.set_trace()
+			
 			if len(image_brains) == 1:
 				image_brain = image_brains[0]
 				initids = getUtility(IIntIds)
 				braini = initids.getId(image_brain.getObject())
 				if obj.aq_parent.Title() != 'Bilder':
-					#import pdb; pdb.set_trace()
+					
 					obj.portal_type='rederi'
 					print('changed')
 

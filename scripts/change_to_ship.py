@@ -41,7 +41,7 @@ if brains:
 	#for index, brain in enumerate(brains):
 	for brain in  brains:
 		obj = brain.getObject()
-		#import pdb; pdb.set_trace()
+		
 		if obj.kallesignal and obj.kallesignal != '':
 			obj.portal_type = "skip"
 			brain_portal_type = "skip"

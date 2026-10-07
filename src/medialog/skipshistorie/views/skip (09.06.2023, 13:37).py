@@ -66,7 +66,7 @@ class toPDF(BrowserView):
 
         myFile = pdfkit.from_url(url,'out.pdf')
         #http://localhost:skipshistorie/arendal/arn758ahauge/arn75819480100000-tora
-        #import pdb; pdb.set_trace()
+       
 
         #url = self.context.absolute_url()
         #myFile = pdfkit.from_url(url,'out.pdf')

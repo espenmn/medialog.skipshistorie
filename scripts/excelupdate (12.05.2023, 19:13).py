@@ -42,35 +42,35 @@ def add_metadata(brain):
             value = ''
 
 
-        #import pdb; pdb.set_trace()
+       
         if obj.id == 'brg22118840200000-amicitia':
-            import pdb; pdb.set_trace()
+            a = '1'
         if value and str(value).lower() != 'nan' and not "skipsnavn" in key:
-            #import pdb; pdb.set_trace()
+           
             field_type = type(getattr(obj, key))
-            print(key);
+            print(key)            
             print(field_type)
             print(value)
             print("----------")
             if key in ["tdw", ""]:
                 setattr(obj, key, int(float(value)))
             elif key in ["grt", "brt", "nrt",  "tilgang"]:
-                #import pdb; pdb.set_trace()
+               
                 setattr(obj, key, int(float(value)))
             else:
-                #import pdb; pdb.set_trace()
+               
                 if isinstance(value, float):
                     value=int(value)
                 setattr(obj, key, str(value))
         else:
-            #import pdb; import pdb; pdb.set_trace()
+            
             #setattr(obj, key, None)
             if "skipsnavn" in key and str(value).lower() != 'nan':
                 skipsnavn.append(str(value))
     if skipsnavn:
         setattr(obj, "skipsnavn", ", ".join(skipsnavn) )
 
-    #import pdb; pdb.set_trace()
+   
     #if obj.bnr and obj.bnr != None and obj.bnr != 'None':
     #    if obj.bnr == '':
     #        setattr(obj, "bnr", None )
@@ -102,7 +102,7 @@ for i in range(0, len(my_dict)):
             transaction.commit()
         else:
             #brains = app.skipshistorie.portal_catalog(portal_type="Document")
-            #import pdb; pdb.set_trace()
+           
             print('did not find')
             print(old_id)
 

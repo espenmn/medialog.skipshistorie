@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="osl33019580500000-hoegh-ailette")
 
-#import pdb; pdb.set_trace()
+
 
 if brains:
 	print('Total  objects: ')

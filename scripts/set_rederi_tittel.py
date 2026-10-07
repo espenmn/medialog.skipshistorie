@@ -46,7 +46,7 @@ if brains:
 
 
 		if rederinummer and rederinummer !='':
-			#import pdb; pdb.set_trace()
+			
 			if "Byer" in obj.aq_parent.Subject():
 				by = obj.aq_parent.Title()
 				obj.by = by

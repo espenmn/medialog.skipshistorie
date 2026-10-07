@@ -29,7 +29,7 @@ if brains:
         print('trying')
 
         for brain in reversed(brains):
-            #import pdb; pdb.set_trace()
+           
 
             try:
                 uuid = brain.UID
@@ -53,12 +53,12 @@ if brains:
                     #obj.reindexObject()
                     print('reindex')
             except KeyError:
-                #import pdb; pdb.set_trace()
+               
                 print("Key error")
                 print(brain.id)
                 ant+=1
             except ValueError:
-                #import pdb; pdb.set_trace()
+               
                 print("value error")
                 print(brain.id)
                 ant+=1

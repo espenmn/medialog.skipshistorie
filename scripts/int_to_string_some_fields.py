@@ -53,17 +53,17 @@ myList = [
 for brain in brains:
     obj = brain.getObject()
     skipsnavn = []
-    #import pdb; pdb.set_trace()
+   
     for key in myList:
         try:
             value = getattr(obj, key)
             if key  == "tdw":
                 setattr(obj, key, int(float(value)))
             elif key in ["grt", "brt", "nrt",  "tilgang"]:
-                #import pdb; pdb.set_trace()
+               
                 setattr(obj, key, int(float(value)))
             else:
-                #import pdb; pdb.set_trace()
+               
                 if isinstance(value, float):
                     value=int(value)
                     setattr(obj, key, str(value))

@@ -63,7 +63,7 @@ if brains:
 				ref = reflink['href']
 
 				if ref and 'file' in ref:
-					#import pdb; pdb.set_trace()
+					
 					folder_parts = ref.split("/")
 					index = None
 					if 'skipshistorie' in folder_parts:
@@ -74,9 +74,9 @@ if brains:
 
 					found_items = None
 					try:
-						#import pdb; pdb.set_trace()
+						
 						found_items = plone.api.content.find(id=id)
-						#import pdb; pdb.set_trace()
+						
 						print('found it')
 						abc =123
 
@@ -115,9 +115,9 @@ if brains:
 
 					found_items = None
 					try:
-						#import pdb; pdb.set_trace()
+						
 						found_items = plone.api.content.find(id=id)
-						#import pdb; pdb.set_trace()
+						
 						print('found it')
 						abc =123
 
@@ -150,7 +150,7 @@ if brains:
 
 
 		except TypeError:
-			#import pdb; pdb.set_trace()
+			
 			#transaction.commit()
 			print('type error')
 			print(reflink)
@@ -170,7 +170,7 @@ if brains:
 
 			#print(brain.getPath())
 			print(id)
-			#import pdb; pdb.set_trace()
+			
 			aaa = 1
 
 

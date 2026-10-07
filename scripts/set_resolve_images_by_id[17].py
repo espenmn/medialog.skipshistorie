@@ -51,14 +51,14 @@ if brains:
 			#images = soup.find('img')
 			#print(obj.Title())
 
-			#import pdb; pdb.set_trace()
+			
 
 			for bilde in soup.findAll('img'):
   				#bilde['src'] = a['href'].replace("google", "mysite")
 				img_link = bilde['src']
 
 				if img_link and not 'resolveuid' in img_link:
-					#import pdb; pdb.set_trace()
+					
 					img_id = img_link.split("/")[-1].replace("-.", ".").replace("..", ".")
 					img_id = img_id.replace("(", "").replace(")", ".")
 					img_id = img_id.replace("%C3%86", "251ca")
@@ -122,7 +122,7 @@ if brains:
 							transaction.commit()
 					else:
 						print('---------------')
-						#import pdb; pdb.set_trace()
+						
 						if found_items and len(found_items) >= 2:
 							print('found too many ' +  img_link)
 						if found_items and len(found_items) < 2:

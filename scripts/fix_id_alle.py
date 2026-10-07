@@ -45,21 +45,21 @@ for brain in  brains:
                         api.content.rename(obj=obj, new_id=ide)
                         #obj.reindexObject()
                     except ValueError:
-                        #import pdb; pdb.set_trace()
+                       
                         #print('http://xweb14d.plana.dk:8980/' + brain.getPath().replace(' ', '%20'))
                         abc=1
                     except KeyError:
                         print('key error  1 -----------------')
-                        #import pdb; pdb.set_trace()
+                       
                         #print('http://xweb14d.plana.dk:8980/' + brain.getPath().replace(' ', '%20'))
                         
                     except TypeError:
                         print('type error 1')
-                        #import pdb; pdb.set_trace()
+                       
                         #print('http://xweb14d.plana.dk:8980/' + brain.getPath().replace(' ', '%20'))
                         
                     finally:
-                        #import pdb; pdb.set_trace()
+                       
                         print('finally 1')
                         #print('http://xweb14d.plana.dk:8980/' + brain.getPath().replace(' ', '%20'))
                         
@@ -70,7 +70,7 @@ for brain in  brains:
         print('value error 2')
         
     except KeyError as e:
-        #import pdb; pdb.set_trace()
+       
         #brain.id = ide
         #obj.id = ide
         ant+=1
@@ -88,7 +88,7 @@ for brain in  brains:
         print(e)
         print('key error 2')
         api.content.rename(obj=obj, new_id=newid.replace(' ', '-'))
-        #import pdb; pdb.set_trace()
+       
                         
     except TypeError:
         abc=1

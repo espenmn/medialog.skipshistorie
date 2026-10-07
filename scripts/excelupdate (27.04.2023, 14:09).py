@@ -35,7 +35,7 @@ def add_metadata(brain):
         if value and str(value).lower() != 'nan':
             setattr(obj, key.lower().replace(" ", ""), value)
         else:
-            #import pdb; import pdb; pdb.set_trace()
+            
             setattr(obj, key.lower().replace(" ", ""), None)
 
 
@@ -55,7 +55,7 @@ for i in range(0, len(my_dict)):
         add_metadata(brains[0])
     else:
         brains = app.skipshistorie.portal_catalog(portal_type="Document")
-        #import pdb; pdb.set_trace()
+       
 
         found = 0
         if brains:

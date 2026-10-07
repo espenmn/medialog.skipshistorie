@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document")
 #brains = app.skipshistorie.portal_catalog(id="brg54119150100000-breim")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -35,9 +35,9 @@ if brains:
 				if '- ' in obj.Title():
 					print('12k34')
 					abd = 1234
-					#import pdb; pdb.set_trace()
+					
 			except TypeError:
-				#import pdb; pdb.set_trace()
+				
 				obj.Title = obj.Title()
 			primary_field = IPrimaryFieldInfo(obj)
 			if isinstance(primary_field.field, RichText):
@@ -45,7 +45,7 @@ if brains:
 						oldtext = obj.text.raw
 						soup = BeautifulSoup(oldtext, 'html.parser')
 						for tag in soup.find_all('tr'):
-							#import pdb; pdb.set_trace()
+							
 							if tag.get_text().strip() == '':
 								tag['class']  = 'tr-empty'
 						obj.text = RichTextValue(str(soup))
@@ -54,7 +54,7 @@ if brains:
 
 
 		except KeyError as ke:
-			#import pdb; pdb.set_trace()
+			
 			my_id  = brain.id
 			ant = ant + 1
 			print(ke)

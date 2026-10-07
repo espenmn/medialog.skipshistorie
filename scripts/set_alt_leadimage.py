@@ -33,7 +33,7 @@ brains = app.skipshistorie.portal_catalog(portal_type="Document",  sort_on="modi
 #initids = getUtility(IIntIds)
 #brains = app.skipshistorie.portal_catalog(id="stg12418960300000-fram")
 
-#import pdb; pdb.set_trace()
+
 
 if brains:
 	print('Total  objects counted: ')
@@ -56,7 +56,7 @@ if brains:
 
 			if images:
 				img_link = images['src']
-				#import pdb; pdb.set_trace()
+				
 
 				if img_link and  'resolveuid'  in img_link:
 					#print(obj.Title())
@@ -85,7 +85,7 @@ if brains:
 					except AttributeError:
 						abc = 123
 					if value and len(value) >= 3 and len(value) < 100 :
-						#import pdb; pdb.set_trace()
+						
 						capttd['class']="lead-captioned"
 						print(value)
 						setattr(obj,  'image_caption' , value)

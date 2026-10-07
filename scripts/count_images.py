@@ -35,7 +35,7 @@ if brains:
 	for brain in   brains:
 		obj = brain.getObject()
 		btext = obj.text
-		#import pdb; pdb.set_trace()
+		
 		if btext:
 			oldtext = btext.raw
 			soup = BeautifulSoup(oldtext, 'html.parser')

@@ -21,7 +21,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type=["Document", "skip"], sort_on="modified", sort_order='descending')
 #brains = app.skipshistorie.portal_catalog(id="brg21320100600000-skandi-aker")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -42,9 +42,9 @@ if brains:
 				if '- ' in obj.Title():
 					print('12k34')
 					abd = 1234
-					#import pdb; pdb.set_trace()
+					
 			except TypeError:
-				#import pdb; pdb.set_trace()
+				
 				obj.Title = obj.Title()
 
 			if hasattr(obj, 'havn'):
@@ -72,19 +72,19 @@ if brains:
 
 
 
-					#import pdb; pdb.set_trace()
+					
 					if obj.off_nr == '' or obj.off_nr == None:
 
 
 						for entry in findText:
-							#import pdb; pdb.set_trace()
+							
 							#print(entry)
 							findField = soup.find(text=entry[1])
 
 							if findField:
 								#print('found')
 								#print(entry[0])
-								#import pdb; pdb.set_trace()
+								
 								#print('setting field')
 								#print(entry[0])
 								the_td = findField.find_parent('td')
@@ -93,7 +93,7 @@ if brains:
 								the_td['class'] = 'scraped'
 
 								#if getattr(obj, entry[0]):
-								#import pdb; pdb.set_trace()
+								
 								if len(str(getattr(obj, entry[0])))<=5:
 											#try:
 											value = findField.find_parent('td').find_next('td').text
@@ -106,11 +106,11 @@ if brains:
 
 											#except AttributeError:
 											#abv = "123"
-											#import pdb; pdb.set_trace()
+											
 											#print(obj.Title())
 											#except ValueError:
 											#abv = "123"
-											#import pdb; pdb.set_trace()
+											
 											#	print(obj.Title())
 
 						# Find all <td> tags that contain an <img> tag

@@ -22,7 +22,7 @@ brains = app.skipshistorie.portal_catalog(portal_type="skip")
 #brains = brg54419170320001-karen.jpg
 
 
-#import pdb; pdb.set_trace()
+
 if brains:
 	print('Total  objects counted: ')
 	print(len(brains))

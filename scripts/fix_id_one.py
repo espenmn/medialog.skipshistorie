@@ -29,7 +29,7 @@ for brain in  brains:
         obj = brain.getObject()
     except KeyError as ke:
         print('key error')
-        #import pdb; pdb.set_trace()
+       
         if not "osl" in brain.getPath():
             print('http://xweb14d.plana.dk:8980/' + brain.getPath())
         #print(ke)
@@ -38,12 +38,12 @@ for brain in  brains:
         ant+=1
         #brain.id = obj.id
         #transaction.commit()
-        #import pdb; pdb.set_trace()
+       
         
         
     if "osl317" in brain.id:
         print('oslo')
-        #import pdb; pdb.set_trace()
+       
         #obj = brain.getObject()
         #api.content.rename(obj=obj, new_id=brain.id)
         

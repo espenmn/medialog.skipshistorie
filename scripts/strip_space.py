@@ -20,7 +20,7 @@ setSite(app['skipshistorie'])
 brains = app.skipshistorie.portal_catalog(portal_type="Document", sort_on="modified", sort_order='ascending')
 #brains = app.skipshistorie.portal_catalog(id="hal70519060100000-france")
 
-	#import pdb; pdb.set_trace()
+	
 
 if brains:
 	print('Total  objects: ')
@@ -65,7 +65,7 @@ if brains:
 
 
 
-						#import pdb; pdb.set_trace()
+						
 						for entry in findText:
 							my_attribute = getattr(obj, entry[0])
 							

@@ -57,7 +57,7 @@ try:
 			try:
 				# Use regular expressions to find the index of the last number in the string
 				#removed
-				#import pdb; pdb.set_trace()
+				
 				obj = brain.getObject()
 				cut = obj.id.find('-')
 				obj.setTitle(obj.id[cut+1:].title().replace("-", " "))
@@ -73,7 +73,7 @@ try:
 			else:
 				abc=1
 				print('else')
-				#import pdb; pdb.set_trace()
+				
 
 
 	print(xxx)

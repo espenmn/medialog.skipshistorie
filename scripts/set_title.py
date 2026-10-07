@@ -42,7 +42,7 @@ if brains:
 			# Use regular expressions to find the index of the last number in the string
 			obj = brain.getObject()
 			#print(cf.f_lineno)
-			#import pdb; pdb.set_trace()
+			
 			
 			if (isinstance(obj.Title, str)):
 				#print(cf.f_lineno)
@@ -53,7 +53,7 @@ if brains:
 			else:
 				ant+=1
 				print(cf.f_lineno)
-				#import pdb; pdb.set_trace()
+				
 				#obj.title = obj.Title()
 				#obj.Title = obj.Title()
 				tit = obj.Title() + '-1'
