@@ -74,7 +74,6 @@ class toPDF(BrowserView):
         
         R = self.request.RESPONSE
 
-        import pdb; pdb.set_trace()
         if len(items) > 1:
             with tempfile.TemporaryDirectory() as temp_dir:
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
