@@ -62,12 +62,12 @@ class toPDF(BrowserView):
         pdfTitle = self.context.title + '.pdf'
         items = []
         
-        if portal_type in ["Folder", "Collection"]:
+        if portal_type in ["Folder", "Collection", "Rederi", "rederi"]:
             # items = self.context.listFolderContents()
             # or we could pass 'depth'
             items = api.content.find(
-                context=self.context,
-                portal_type="skip",
+                context=context,
+                portal_type=["Skip", "skip"],
                 depth=20
             )
         else:
