@@ -70,7 +70,7 @@ class toPDF(BrowserView):
                 portal_type="skip" 
             )
         else:
-            items = [self.context]
+            items = [context]
         
         R = self.request.RESPONSE
 
@@ -80,7 +80,7 @@ class toPDF(BrowserView):
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:                    
                     for item in items:
-                            url = "{}/skip-view".format(item.absolute_url())
+                            url = "{}/skip-view".format(item.getURL())
                             tittel = item.id
                             
                             # import pdb; pdb.set_trace()
@@ -104,18 +104,22 @@ class toPDF(BrowserView):
                     zip_data = f.read()
 
         
-                R.setHeader("Content-Type", "application/zip")
-                R.setHeader(
-                        "Content-Disposition",
-                        'attachment; filename="{}.zip"'.format(pdfTitle)
-                )
-                R.setHeader("Content-Length", len(zip_data))
+            R.setHeader("Content-Type", "application/zip")
+            R.setHeader(
+                    "Content-Disposition",
+                    'attachment; filename="{}.zip"'.format(pdfTitle)
+            )
+            R.setHeader("Content-Length", len(zip_data))
 
-                return zip_data
+            return zip_data
 
 
         elif len(items) == 1:
-            url = "{}/skip-view".format(items[0].absolute_url())
+            if items[0] == context:
+                url = "{}/skip-view".format(items[0].absolute_url())
+            else:
+                url = "{}/skip-view".format(items[0].getURL())
+            
             pdfFile = pdfkit.from_url(url, "out.pdf")
             
             with open('out.pdf', 'rb') as f:
