@@ -80,7 +80,6 @@ class toPDF(BrowserView):
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zip_file:                    
                     for item in items:
-                        if item.portal_type in ["Skip", "skip"]:
                             url = "{}/skip-view".format(item.absolute_url())
                             tittel = item.id
                             
@@ -104,19 +103,18 @@ class toPDF(BrowserView):
                 with open(zip_path, "rb") as f:
                     zip_data = f.read()
 
-
         
-            R.setHeader("Content-Type", "application/zip")
-            R.setHeader(
-                    "Content-Disposition",
-                    'attachment; filename="{}.zip"'.format(pdfTitle)
-            )
-            R.setHeader("Content-Length", len(zip_data))
+                R.setHeader("Content-Type", "application/zip")
+                R.setHeader(
+                        "Content-Disposition",
+                        'attachment; filename="{}.zip"'.format(pdfTitle)
+                )
+                R.setHeader("Content-Length", len(zip_data))
 
-            return zip_data
+                return zip_data
 
 
-        if len(items) == 1:
+        elif len(items) == 1:
             url = "{}/skip-view".format(items[0].absolute_url())
             pdfFile = pdfkit.from_url(url, "out.pdf")
             
@@ -130,5 +128,6 @@ class toPDF(BrowserView):
 
             return pdf_data
         
-        return "No ships found"
+        else:
+            return "No ships found"
         
