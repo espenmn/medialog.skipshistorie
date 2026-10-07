@@ -67,14 +67,14 @@ class toPDF(BrowserView):
             # or we could pass 'depth'
             items = api.content.find(
                 context=context,
-                portal_type=["Skip", "skip"],
-                depth=20
+                portal_type="skip" 
             )
         else:
             items = [self.context]
         
         R = self.request.RESPONSE
 
+        import pdb; pdb.set_trace()
         if len(items) > 1:
             with tempfile.TemporaryDirectory() as temp_dir:
                 zip_path = os.path.join(temp_dir, "{}.zip".format(pdfTitle))
