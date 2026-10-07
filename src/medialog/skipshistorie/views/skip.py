@@ -110,6 +110,7 @@ class toPDF(BrowserView):
 
 
         if len(items) == 1:
+            import pdb; pdb.set_trace()
             pdfFile = pdfkit.from_url(items[0], "out.pdf")
             R = self.request.RESPONSE
 

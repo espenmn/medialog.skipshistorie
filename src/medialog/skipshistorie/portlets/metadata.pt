@@ -33,6 +33,9 @@
           </li>
         </ul>
       </p>
+
+    </aside>
+    <aside>
       <p>
         <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
       </p>
