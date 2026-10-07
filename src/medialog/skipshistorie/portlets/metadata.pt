@@ -15,9 +15,11 @@
             <b>IMO: </b>${context/off_nr|None}</li>
           <li tal:condition="view/related_ships|None">
             <b>Samme IMO: </b>
-            <span tal:repeat="ship view/related_ships">
-              <a href="${ship/absolute_url}" alt="lenke til ship">${ship/Title}</a>
-            </span>
+            <ul>
+              <li tal:repeat="ship view/related_ships">
+                <a href="${ship/getURL}" alt="lenke til ship">${ship/Title}</a>
+              </li>
+            </ul>
           </li>
           <li tal:condition="context/flagg|None">
             <b>Flagg: </b>${context/flagg|None}</li>
@@ -27,9 +29,11 @@
             <b>Kallesignal: </b>${context/kallesignal|None}</li>
           <li tal:condition="view/related_kallesignal|None">
             <b>Samme Kallesignal: </b>
-            <span tal:repeat="ship view/related_kallesignal">
-              <a href="${ship/getURL}" alt="lenke til ship">${ship/Title}</a>
-            </span>
+            <ul>
+              <li tal:repeat="ship view/related_kallesignal">
+                <a href="${ship/getURL}" alt="lenke til ship">${ship/Title}</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </p>
