@@ -87,12 +87,13 @@ class MRenderer(base.Renderer):
     def render(self):
         return self._template()
     
-    # @property
+    @property
     def related_kallesignal(self):
         context = self.context
         item_kallesignal = context.kallesignal 
         documents = api.content.find(off_nr=item_kallesignal)
         
+        import pdb; pdb.set_trace()
         return documents
         if item_kallesignal:
             return [
@@ -101,7 +102,7 @@ class MRenderer(base.Renderer):
             ]
         return None
     
-    # @property
+    @property
     def related_ships(self):
         context = self.context
         item_off_nr = context.off_nr 
