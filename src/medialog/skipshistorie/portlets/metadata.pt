@@ -42,9 +42,11 @@
     <aside>
       <p>
         <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
+      </p>
+      <p>
         <tal:check tal:condition="off_nr|None"> 
           <a tal:condition="python: len(off_nr) == 7" 
-            class="button standalone" 
+            class="button standalone vesselfinder" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
       </p>
@@ -55,6 +57,7 @@
 </html>
 <style>
   .portletMetadata ul ul {padding-left: 0.9em}
+  button.vesselfinder {background: #112d5a}
   .pre {
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
