@@ -102,7 +102,7 @@ class MRenderer(base.Renderer):
     
     # @property
     def related_ships(self):
-        documents = api.content.find(off_nr=item_off_nr)
+        documents = api.content.find(off_nr=self.context.item_off_nr)
         context = self.context
         item_off_nr = context.off_nr 
         
