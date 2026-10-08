@@ -42,8 +42,8 @@
     <aside>
     <p>
         <tal:check tal:condition="off_nr|None"> 
-          <a tal:condition="python: len(off_nr) == 7 and yno and int(yno) > 1987" 
-            class="vesselfinder" 
+          <a tal:condition="view/possible_imo|None" 
+            class="vesselfinder external-link" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
       </p>
@@ -54,11 +54,9 @@
       <p>&nbsp;</p>
     </aside>
   </body>
-
-</html>
 <style>
   .portletMetadata ul ul {padding-left: 0.9em}
-  .portletMetadata .glyphicon::after {display: none !important;}
+  i.glyphicon {display: none !important;}
   button.vesselfinder {background: #112d5a}
   .pre {
   white-space: pre-wrap;       /* css-3 */
@@ -70,3 +68,5 @@
   margin-bottom: 0;
   }
 </style>
+
+</html>
