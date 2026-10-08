@@ -91,10 +91,8 @@ class MRenderer(base.Renderer):
     def related_kallesignal(self):
         context = self.context
         item_kallesignal = context.kallesignal 
-        documents = api.content.find(off_nr=item_kallesignal)
+        documents = api.content.find(kallesignal=item_kallesignal)
         
-        import pdb; pdb.set_trace()
-        return documents
         if item_kallesignal:
             return [
                 item for item in documents
