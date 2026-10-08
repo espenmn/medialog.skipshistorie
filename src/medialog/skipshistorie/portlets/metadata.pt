@@ -42,7 +42,7 @@
     <aside>
     <p>
         <tal:check tal:condition="off_nr|None"> 
-          <a tal:condition="python: len(off_nr) == 7" 
+          <a tal:condition="python: len(off_nr) == 7 7 and context.yno and int(context.yno) > 1987" 
             class="vesselfinder" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
