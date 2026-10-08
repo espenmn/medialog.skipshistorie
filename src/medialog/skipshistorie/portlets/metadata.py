@@ -112,7 +112,12 @@ class MRenderer(base.Renderer):
                 if item.id != context.id
             ]
         return None
-
+    
+    @property
+    def possible_imo(self): 
+        item_yno = self.context.yno
+        return int(item_yno) > 1987
+        
 
 
     @property
