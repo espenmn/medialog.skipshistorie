@@ -55,6 +55,7 @@
   .portletMetadata ul ul {padding-left: 0.9em}
   i.glyphicon {display: none !important;}
   .standalone.vesselfinder {background: #112d5a !important}
+  .portletMetadata button {margin-bottom: 1rem;}
   .pre {
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
