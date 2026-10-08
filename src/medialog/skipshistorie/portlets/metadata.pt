@@ -46,7 +46,7 @@
       <p>
         <tal:check tal:condition="off_nr|None"> 
           <a tal:condition="python: len(off_nr) == 7" 
-            class="button standalone vesselfinder" 
+            class="button vesselfinder" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
       </p>
@@ -57,6 +57,7 @@
 </html>
 <style>
   .portletMetadata ul ul {padding-left: 0.9em}
+  .portletMetadata .glyphicon {display: none !important;}
   button.vesselfinder {background: #112d5a}
   .pre {
   white-space: pre-wrap;       /* css-3 */
