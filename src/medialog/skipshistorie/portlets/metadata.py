@@ -93,6 +93,7 @@ class MRenderer(base.Renderer):
         item_kallesignal = context.kallesignal 
         documents = api.content.find(off_nr=item_kallesignal)
         
+        return documents
         if item_kallesignal:
             return [
                 item for item in documents
