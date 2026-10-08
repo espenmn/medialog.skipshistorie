@@ -42,7 +42,7 @@
     <aside>
 
       <p>
-        <a class="button standalone" href="${context/absolute_url}/toPDF">PDF</a>
+        <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
         <tal:check tal:condition="off_nr|None">
           <a tal:condition="view/possible_imo|None" class="button standalone vesselfinder external-link" href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
