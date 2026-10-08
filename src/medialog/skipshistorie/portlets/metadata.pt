@@ -43,7 +43,7 @@
       <p>
         <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
         <tal:check tal:condition="off_nr|None"> 
-          <a tal:condition="python: off_nr > 1000000" 
+          <a tal:condition="python: len(off_nr) > 7" 
             class="button standalone" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
