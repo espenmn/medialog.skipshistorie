@@ -89,27 +89,27 @@ class MRenderer(base.Renderer):
     
     # @property
     def related_kallesignal(self):
+        documents = api.content.find(off_nr=item_kallesignal)
         context = self.context
         item_kallesignal = context.kallesignal 
-        documents = api.content.find(off_nr=item_kallesignal)
         
         if item_kallesignal:
             return [
                 item for item in documents
-                if item.getObject() != context
+                if item.id != context.id
             ]
         return None
     
     # @property
     def related_ships(self):
+        documents = api.content.find(off_nr=item_off_nr)
         context = self.context
         item_off_nr = context.off_nr 
-        documents = api.content.find(off_nr=item_off_nr)
         
         if item_off_nr:
             return [
                 item for item in documents
-                if item.getObject() != context
+                if item.id != context.id
             ]
         return None
 
