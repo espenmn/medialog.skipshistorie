@@ -2,7 +2,7 @@
   xmlns:tal="http://xml.zope.org/namespaces/tal"
   xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plone" tal:omit-tag="">
 
-  <body>
+  <body tal:define="off_nr context/off_nr|None">
 
     <aside class="portlet portletMetadata">
       <header class="portletHeader">
@@ -11,8 +11,8 @@
       <p>
 
         <ul>
-          <li tal:condition="context/off_nr|None">
-            <b>IMO: </b>${context/off_nr|None}</li>
+          <li tal:condition="off_nr|None">
+            <b>IMO/off_nr: </b>${off_nr|None}</li>
           <li tal:condition="view/related_ships|None">
             <b>Samme IMO: </b>
             <ul>
@@ -42,6 +42,9 @@
     <aside>
       <p>
         <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
+        <a tal:condition="python: len(off_nr)==7" class="button standalone" 
+          href="https://www.vesselfinder.com/vessels/details${context/off_nr}">Check Vesselfinder</a>
+        1072641
       </p>
     </aside>
   </body>
