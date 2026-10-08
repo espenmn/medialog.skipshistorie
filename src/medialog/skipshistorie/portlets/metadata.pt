@@ -40,16 +40,17 @@
 
     </aside>
     <aside>
-      <p>
-        <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
-      </p>
-      <p>
+    <p>
         <tal:check tal:condition="off_nr|None"> 
           <a tal:condition="python: len(off_nr) == 7" 
-            class="button vesselfinder" 
+            class="vesselfinder" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
       </p>
+      <p>
+        <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
+      </p>
+      
       <p>&nbsp;</p>
     </aside>
   </body>
