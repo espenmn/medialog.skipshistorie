@@ -221,7 +221,7 @@
                   </tr>
                   <tr tal:condition="obj/off_nr|None">
                     <td>
-                      <b i18n:translate="">IMO / off nr</b>
+                      <b i18n:translate="">IMO/off nr</b>
                     </td>
                     <td>${obj/off_nr}</td>
                   </tr>
