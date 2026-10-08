@@ -47,6 +47,7 @@
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
       </p>
+      <p>&nbsp;</p>
     </aside>
   </body>
 
