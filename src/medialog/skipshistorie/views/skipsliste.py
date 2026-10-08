@@ -20,7 +20,7 @@ class FolderView(BrowserView):
 
 
     def batch(self):
-        batch = self.context.restrictedTraverse('@@contentlisting')(sort_on='sortable_title', batch=True, b_size=40);
+        batch = self.context.restrictedTraverse('@@contentlisting')(sort_on='sortable_title', batch=True, b_size=340)
         return batch
 
     def normalizeString(self, text):

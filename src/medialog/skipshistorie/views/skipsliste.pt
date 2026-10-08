@@ -115,9 +115,6 @@
               </p>
             </metal:empty>
 
-
-
-
                      <script>require([
                        'jquery',
                        ], function(Base) {
