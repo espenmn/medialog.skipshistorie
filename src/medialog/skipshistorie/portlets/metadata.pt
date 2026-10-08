@@ -2,7 +2,7 @@
   xmlns:tal="http://xml.zope.org/namespaces/tal"
   xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plone" tal:omit-tag="">
 
-  <body tal:define="off_nr context/off_nr|None">
+  <body tal:define="off_nr context/off_nr|None; yno context/yno|None">
 
     <aside class="portlet portletMetadata">
       <header class="portletHeader">
@@ -42,7 +42,7 @@
     <aside>
     <p>
         <tal:check tal:condition="off_nr|None"> 
-          <a tal:condition="python: len(off_nr) == 7 7 and context.yno and int(context.yno) > 1987" 
+          <a tal:condition="python: len(off_nr) == 7  and int(yno) > 1987" 
             class="vesselfinder" 
             href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
         </tal:check>
