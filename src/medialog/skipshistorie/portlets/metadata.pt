@@ -40,24 +40,21 @@
 
     </aside>
     <aside>
-    <p>
-        <tal:check tal:condition="off_nr|None"> 
-          <a tal:condition="view/possible_imo|None" 
-            class="vesselfinder external-link" 
-            href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
-        </tal:check>
-      </p>
+
       <p>
         <a class="button standalone" href="${context/absolute_url}/toPDF">Get PDF</a>
+        <tal:check tal:condition="off_nr|None">
+          <a tal:condition="view/possible_imo|None" class="button standalone vesselfinder external-link" href="https://www.vesselfinder.com/vessels/details/${off_nr}">Try Vesselfinder</a>
+        </tal:check>
       </p>
-      
+
       <p>&nbsp;</p>
     </aside>
   </body>
-<style>
+  <style>
   .portletMetadata ul ul {padding-left: 0.9em}
   i.glyphicon {display: none !important;}
-  button.vesselfinder {background: #112d5a}
+  .standalone.vesselfinder {background: #112d5a !important}
   .pre {
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -67,6 +64,6 @@
   padding-bottom: 0;
   margin-bottom: 0;
   }
-</style>
+  </style>
 
 </html>
