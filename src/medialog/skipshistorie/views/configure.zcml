@@ -59,15 +59,7 @@
       permission="zope2.View"
       layer="medialog.skipshistorie.interfaces.IMedialogSkipshistorieLayer"
       />
-
-    <!--pp client templates -->
-    <browser:page
-        name="asHTML"
-        for="*"
-        template="skip.pt"
-        permission="zope2.View"
-        class=".skip.SkipView"
-    />
+ 
 
 
     <browser:page

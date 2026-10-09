@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 #from medialog.skipshistorie import _
-from pp.client.plone.browser.compatible import InitializeClass
+# from pp.client.plone.browser.compatible import InitializeClass
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from medialog.skipshistorie import _
@@ -25,29 +25,29 @@ class ISkipView(Interface):
 
 
 
-@implementer(ISkipView)
-class SkipView(BrowserView):
-    """ Converter view forSkip.
-    """
+# @implementer(ISkipView)
+# class SkipView(BrowserView):
+#     """ Converter view forSkip.
+#     """
     
-    template = ViewPageTemplateFile('skip.pt')
+#     template = ViewPageTemplateFile('skip.pt')
 
 
-    def __init__(self, context, request, expr, engine):
-        super().__init__(context, request)
+#     def __init__(self, context, request, expr, engine):
+#         super().__init__(context, request)
 
 
-    def __call__(self, *args, **kw):
-        transformations = (
-            'makeImagesLocal',
-            'convertFootnotes',
-            'removeCrapFromHeadings',
-            'fixHierarchies',
-        )
+#     def __call__(self, *args, **kw):
+#         transformations = (
+#             'makeImagesLocal',
+#             'convertFootnotes',
+#             'removeCrapFromHeadings',
+#             'fixHierarchies',
+#         )
 
-        return self.template(self.context, **data)
+#         return self.template(self.context, **data)
 
-InitializeClass(SkipView)
+# InitializeClass(SkipView)
 
 
 
