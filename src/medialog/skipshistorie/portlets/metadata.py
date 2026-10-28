@@ -113,14 +113,28 @@ class MRenderer(base.Renderer):
             ]
         return None
     
-    @property
-    def possible_imo(self): 
-        off_nr = self.context.off_nr
-        item_yno = self.context.year or 0
-        if off_nr and len(off_nr) == 7 and int(item_yno) > 1987:
-            return True
-        return False
+    # @property
+    # def possible_imo(self): 
+    #     off_nr = self.context.off_nr
+    #     item_yno = self.context.year or 0
+    #     if off_nr and len(off_nr) == 7 and int(item_yno) > 1987:
+    #         return True
+    #     return False
         
+    @property
+    def possible_imo(self):
+        off_nr = self.context.off_nr
+        item_yno = self.context.year
+
+        if not off_nr or len(off_nr) != 7:
+            return False
+
+        try:
+            year = int(item_yno)
+        except (TypeError, ValueError):
+            return False
+
+        return year > 1987
         
 
 

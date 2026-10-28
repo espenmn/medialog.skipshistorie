@@ -38,19 +38,6 @@
 
 
 
-
-      <script>require([
-        'jquery',
-        'https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js'
-        ], function(Base) {
-          'use strict';
-          $('.datatable').DataTable( {
-            "processing": true,
-            "pageLength": 50,
-          });
-        });
-      </script>
-
       <style>
         .dataTables_length label { line-height: 3em: }
       </style>

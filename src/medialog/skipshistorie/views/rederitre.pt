@@ -38,14 +38,7 @@
 
 
 
-
-      <script>require([
-        'jquery',
-        ], function(Base) {
-          'use strict';
-          $('.stacktable').stacktable();
-        });
-      </script>
+ 
 
       </metal:content-core>
   </body>
